@@ -47,6 +47,7 @@ export default function RootLayout({
           strategy="afterInteractive"
           src="https://cdn.userway.org/widget.js"
           data-account="REPLACE_WITH_YOUR_ID"
+          data-position="3" 
         />
       </body>
     </html>

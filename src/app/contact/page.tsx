@@ -126,8 +126,8 @@ export default function ContactPage() {
                 <form className="space-y-8" noValidate>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="space-y-3">
-                      <label htmlFor="first-name" className="text-xs font-bold uppercase tracking-widest text-white/40 ml-1">
-                        First Name <span className="text-white/20" aria-hidden="true">*</span>
+                      <label htmlFor="first-name" className="text-xs font-bold uppercase tracking-widest text-white/60 ml-1">
+                        First Name <span className="text-white/30" aria-hidden="true">*</span>
                       </label>
                       <input
                         type="text"
@@ -135,13 +135,13 @@ export default function ContactPage() {
                         name="first-name"
                         required
                         aria-required="true"
-                        className="w-full px-6 py-4 rounded-2xl border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-transparent transition-all placeholder:text-white/10"
+                        className="w-full px-6 py-4 rounded-2xl border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-transparent transition-all placeholder:text-white/20"
                         placeholder="Jane"
                       />
                     </div>
                     <div className="space-y-3">
-                      <label htmlFor="last-name" className="text-xs font-bold uppercase tracking-widest text-white/40 ml-1">
-                        Last Name <span className="text-white/20" aria-hidden="true">*</span>
+                      <label htmlFor="last-name" className="text-xs font-bold uppercase tracking-widest text-white/60 ml-1">
+                        Last Name <span className="text-white/30" aria-hidden="true">*</span>
                       </label>
                       <input
                         type="text"
@@ -149,15 +149,15 @@ export default function ContactPage() {
                         name="last-name"
                         required
                         aria-required="true"
-                        className="w-full px-6 py-4 rounded-2xl border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-transparent transition-all placeholder:text-white/10"
+                        className="w-full px-6 py-4 rounded-2xl border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-transparent transition-all placeholder:text-white/20"
                         placeholder="Doe"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-3">
-                    <label htmlFor="email" className="text-xs font-bold uppercase tracking-widest text-white/40 ml-1">
-                      Email Address <span className="text-white/20" aria-hidden="true">*</span>
+                    <label htmlFor="email" className="text-xs font-bold uppercase tracking-widest text-white/60 ml-1">
+                      Email Address <span className="text-white/30" aria-hidden="true">*</span>
                     </label>
                     <input
                       type="email"
@@ -165,26 +165,26 @@ export default function ContactPage() {
                       name="email"
                       required
                       aria-required="true"
-                      className="w-full px-6 py-4 rounded-2xl border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-transparent transition-all placeholder:text-white/10"
+                      className="w-full px-6 py-4 rounded-2xl border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-transparent transition-all placeholder:text-white/20"
                       placeholder="jane@example.com"
                     />
                   </div>
 
                   <div className="space-y-3">
-                    <label htmlFor="phone" className="text-xs font-bold uppercase tracking-widest text-white/40 ml-1">
+                    <label htmlFor="phone" className="text-xs font-bold uppercase tracking-widest text-white/60 ml-1">
                       Phone Number
                     </label>
                     <input
                       type="tel"
                       id="phone"
                       name="phone"
-                      className="w-full px-6 py-4 rounded-2xl border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-transparent transition-all placeholder:text-white/10"
+                      className="w-full px-6 py-4 rounded-2xl border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-transparent transition-all placeholder:text-white/20"
                       placeholder="(555) 000-0000"
                     />
                   </div>
 
                   <div className="space-y-3">
-                    <label htmlFor="subject" className="text-xs font-bold uppercase tracking-widest text-white/40 ml-1">
+                    <label htmlFor="subject" className="text-xs font-bold uppercase tracking-widest text-white/60 ml-1">
                       Reason for Contact
                     </label>
                     <div className="relative">
@@ -198,15 +198,15 @@ export default function ContactPage() {
                         <option value="status">Repair Status Update</option>
                         <option value="general">General Inquiry</option>
                       </select>
-                      <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-white/20">
+                      <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-white/30">
                         <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/></svg>
                       </div>
                     </div>
                   </div>
 
                   <div className="space-y-3">
-                    <label htmlFor="message" className="text-xs font-bold uppercase tracking-widest text-white/40 ml-1">
-                      Your Message <span className="text-white/20" aria-hidden="true">*</span>
+                    <label htmlFor="message" className="text-xs font-bold uppercase tracking-widest text-white/60 ml-1">
+                      Your Message <span className="text-white/30" aria-hidden="true">*</span>
                     </label>
                     <textarea
                       id="message"
@@ -214,7 +214,7 @@ export default function ContactPage() {
                       rows={4}
                       required
                       aria-required="true"
-                      className="w-full px-6 py-4 rounded-2xl border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-transparent transition-all resize-none placeholder:text-white/10"
+                      className="w-full px-6 py-4 rounded-2xl border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-transparent transition-all resize-none placeholder:text-white/20"
                       placeholder="Tell us about your vehicle..."
                     />
                   </div>

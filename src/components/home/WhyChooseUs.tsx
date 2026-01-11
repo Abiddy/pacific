@@ -48,9 +48,9 @@ export function WhyChooseUs() {
             >
               <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
                 Why Choose Pacific Auto Body for <br />
-                <span className="text-white/40">Your Auto Body Repair Needs?</span>
+                <span className="text-white/50">Your Auto Body Repair Needs?</span>
               </h2>
-              <p className="text-xl text-white/60 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium">
+              <p className="text-xl text-white/70 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium">
                 Trust family-owned Pacific Auto Body for the best auto body service in town. 
                 Our minimum 5-year warranty is a testament to our confidence in the quality of our work. 
                 We also offer convenient towing services during business hours. We are proud of our 25 years of experience! 

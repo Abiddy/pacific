@@ -50,7 +50,7 @@ export function Hero() {
             className="text-4xl md:text-8xl font-bold tracking-tight text-white leading-[1.1] mb-8"
           >
             Expert Auto Body <br />
-            <span className="text-white/40">Restoration & Repair</span>
+            <span className="text-white/50">Restoration & Repair</span>
           </motion.h1>
           
           {/* Description */}
@@ -58,7 +58,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-base md:text-lg text-white/60 max-w-2xl leading-relaxed mb-12"
+            className="text-base md:text-lg text-white/70 max-w-2xl leading-relaxed mb-12"
           >
             Precision collision repair and factory-finish painting for high-end vehicles. 
             We restore your peace of mind with a minimum 5-year warranty.
