@@ -1,13 +1,16 @@
 @import "tailwindcss";
 
-@theme inline {
+@theme {
+  /* Override the default sans font with our Outfit variable */
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  
   --color-primary: #ffffff;
   --color-primary-foreground: #000000;
   
   --color-secondary: #111111;
   --color-secondary-foreground: #ffffff;
   
-  --color-accent: #3b82f6; /* Subtle blue for links/actions */
+  --color-accent: #3b82f6;
   --color-accent-foreground: #ffffff;
   
   --color-muted: #1a1a1a;
@@ -34,10 +37,16 @@
   --foreground: #ffffff;
 }
 
-/* Force dark mode behavior as the default "Premium" look */
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
 body {
   background-color: var(--background);
   color: var(--foreground);
+  /* Use the font variable directly to ensure it works even if Tailwind classes fail */
+  font-family: var(--font-outfit), sans-serif;
   font-feature-settings: "rlig" 1, "calt" 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -47,13 +56,12 @@ body {
   border-color: var(--color-border);
 }
 
-/* Accessibility: Focus indicators - made white for dark theme */
+/* Accessibility: Focus indicators */
 :focus-visible {
   outline: 2px solid #ffffff;
   outline-offset: 2px;
 }
 
-/* Skip to content link */
 .skip-link {
   position: absolute;
   top: -40px;
@@ -71,7 +79,6 @@ body {
   top: 0;
 }
 
-/* Custom Scrollbar for Premium Look */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -86,7 +93,6 @@ body {
   background: #3f3f46;
 }
 
-/* Selection color */
 ::selection {
   background-color: rgba(255, 255, 255, 0.2);
   color: #ffffff;

@@ -2,14 +2,14 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { Phone, Menu, X, Instagram, MessageSquare } from "lucide-react";
+import { Phone, Menu, X, Instagram, MessageSquare, Car } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
-  { name: "Cars", href: "/services" },
-  { name: "Rental Terms", href: "/terms" },
-  { name: "News", href: "/about" },
+  { name: "Services", href: "/services" },
+  { name: "About Us", href: "/about" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export function Navbar() {
@@ -37,8 +37,8 @@ export function Navbar() {
       >
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2 group">
-          <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center border border-white/20 group-hover:bg-white/20 transition-colors">
-            <div className="w-4 h-4 bg-white rotate-45" />
+          <div className="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center border border-white/10 group-hover:bg-white/10 transition-all duration-300">
+            <Car className="h-5 w-5 text-white" strokeWidth={2.5} />
           </div>
           <span className="text-xl font-bold tracking-tight text-white uppercase italic">
             Pacific <span className="text-white/40">Auto Body</span>
@@ -75,7 +75,7 @@ export function Navbar() {
             href="/contact"
             className="inline-flex h-10 items-center justify-center rounded-full bg-white px-6 text-sm font-bold text-black transition-transform hover:scale-105 active:scale-95"
           >
-            Book Now
+            Get Estimate
           </Link>
         </div>
 
@@ -116,7 +116,7 @@ export function Navbar() {
                   className="flex items-center justify-center h-14 rounded-2xl bg-white text-black font-bold text-lg"
                   onClick={() => setIsOpen(false)}
                 >
-                  Book Now
+                  Get Estimate
                 </Link>
                 <div className="flex justify-center space-x-8 pt-2">
                   <Instagram className="h-6 w-6 text-white/60" />

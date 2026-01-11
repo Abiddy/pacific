@@ -1,17 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Outfit } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const outfit = Outfit({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-outfit",
 });
 
 export const metadata: Metadata = {
@@ -28,9 +25,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className={`scroll-smooth ${outfit.variable}`}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
+        className="antialiased min-h-screen flex flex-col font-sans"
       >
         <a href="#main-content" className="skip-link">
           Skip to main content
@@ -43,6 +40,14 @@ export default function RootLayout({
         </main>
         
         <Footer />
+
+        {/* UserWay Accessibility Widget */}
+        <Script
+          id="userway-accessibility"
+          strategy="afterInteractive"
+          src="https://cdn.userway.org/widget.js"
+          data-account="REPLACE_WITH_YOUR_ID"
+        />
       </body>
     </html>
   );

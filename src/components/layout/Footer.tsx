@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone, MapPin, Clock, Mail, Instagram, Facebook, ArrowRight } from "lucide-react";
+import { Phone, MapPin, Clock, Mail, Instagram, Facebook, ArrowRight, Car } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,8 +11,8 @@ export function Footer() {
           {/* Brand Section */}
           <div className="lg:col-span-5 space-y-12">
             <Link href="/" className="flex items-center space-x-2 group">
-              <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center border border-white/20">
-                <div className="w-5 h-5 bg-white rotate-45" />
+              <div className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center border border-white/10 group-hover:bg-white/10 transition-all duration-300">
+                <Car className="h-6 w-6 text-white" strokeWidth={2.5} />
               </div>
               <span className="text-2xl font-bold tracking-tight text-white uppercase italic">
                 Pacific <span className="text-white/40">Auto Body</span>

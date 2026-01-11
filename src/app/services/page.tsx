@@ -1,151 +1,170 @@
+"use client";
+
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
-import { CheckCircle2, Car, Paintbrush, Ruler, Shield, Hammer, ClipboardCheck } from "lucide-react";
+import { motion } from "framer-motion";
+import { CheckCircle2, Car, Paintbrush, Ruler, Shield, Hammer, ClipboardCheck, ArrowRight, Truck, Award } from "lucide-react";
 
-const detailedServices = [
+const whyChooseUs = [
   {
-    title: "Collision Repair",
-    icon: Car,
-    description: "Our certified technicians restore your vehicle's structural integrity and aesthetic appearance using manufacturer-approved methods.",
-    features: [
-      "Body panel replacement & repair",
-      "Structural alignment",
-      "Bumper & grill repair",
-      "Window & glass replacement"
-    ]
+    title: "Expert Collision Repair",
+    description: "We restore your vehicle to its pre-accident condition with precision bodywork and structural restoration.",
+    icon: Car
   },
   {
-    title: "Precision Painting",
-    icon: Paintbrush,
-    description: "We use advanced computer-controlled color matching to ensure a perfect finish that matches your car's original factory paint.",
-    features: [
-      "Environmentally friendly paints",
-      "Baked-on finishes for durability",
-      "Multi-step polishing process",
-      "UV protection clear coats"
-    ]
+    title: "Professional Bumper Repair",
+    description: "We fix minor and major bumper damages efficiently, restoring both safety and appearance.",
+    icon: Shield
   },
   {
-    title: "Frame Straightening",
-    icon: Ruler,
-    description: "Safety is our priority. We use laser-guided measurement systems to return your vehicle's frame to its exact factory specifications.",
-    features: [
-      "Laser measurement technology",
-      "Precision pulling systems",
-      "Safety system recalibration",
-      "Structural certification"
-    ]
+    title: "Precision Frame Alignment",
+    description: "We ensure your vehicle has safe vehicle alignment using advanced laser-guided measurement systems.",
+    icon: Ruler
+  },
+  {
+    title: "Scratch and Dent Repair",
+    description: "We eliminate unsightly scratches and dents, renewing your car's appearance to showroom quality.",
+    icon: Hammer
   }
 ];
 
 export default function ServicesPage() {
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full bg-black text-white font-sans">
       {/* Page Header */}
-      <section className="bg-slate-900 py-20 text-white">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Services</h1>
-          <p className="text-xl text-slate-300 max-w-2xl leading-relaxed">
-            Professional auto body and collision repair services backed by 25 years of experience 
-            and a commitment to quality that's second to none.
-          </p>
+      <section className="relative py-32 overflow-hidden border-b border-white/5">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.05)_0%,transparent_50%)]" />
+        <div className="container relative z-10 mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="text-4xl md:text-7xl font-bold tracking-tight mb-8 max-w-4xl leading-tight uppercase italic">
+              Experience Exceptional <br />
+              <span className="text-white/40 font-normal">Auto Body Repair</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-white/60 max-w-3xl leading-relaxed mb-10">
+              When your car or truck needs bodywork, turn to Pacific Auto Body of Gardena, CA. 
+              We specialize in vehicle collision repairs and more with 25 years of experience. 
+              Contact us for a FREE estimate.
+            </p>
+            <Button size="lg" asChild className="rounded-full bg-white text-black hover:bg-white/90 px-10 h-16 text-lg font-bold">
+              <Link href="/contact">Get Your Free Estimate</Link>
+            </Button>
+          </motion.div>
         </div>
       </section>
 
-      {/* Detailed Services */}
-      <section className="py-24">
-        <div className="container mx-auto px-4">
-          <div className="space-y-32">
-            {detailedServices.map((service, index) => (
-              <div 
-                key={service.title} 
-                className={`flex flex-col lg:flex-row items-center gap-16 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
-              >
-                <div className="flex-1 space-y-6">
-                  <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
-                    <service.icon className="h-8 w-8" />
-                  </div>
-                  <h2 className="text-3xl font-bold tracking-tight">{service.title}</h2>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    {service.description}
-                  </p>
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-                    {service.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-primary shrink-0" />
-                        <span className="font-medium">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+      {/* Why Choose Us Section */}
+      <section className="py-32 border-b border-white/5">
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mb-24">
+            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-8">
+              Why Choose Our <br />
+              <span className="text-white/40">Auto Body Repair Services?</span>
+            </h2>
+            <p className="text-xl text-white/60 leading-relaxed">
+              At Pacific Auto Body, we understand your vehicle is more than just a mode of transport; 
+              it's an integral part of your daily life. Here's why our services stand out:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10 border border-white/10 rounded-[2.5rem] overflow-hidden">
+            {whyChooseUs.map((service, i) => (
+              <div key={i} className="group p-12 md:p-16 bg-black hover:bg-[#09090b] transition-colors duration-500">
+                <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-8 border border-white/10 group-hover:scale-110 transition-transform">
+                  <service.icon className="h-7 w-7 text-white" />
                 </div>
-                <div className="flex-1 w-full aspect-video rounded-3xl bg-muted flex items-center justify-center border-2 border-dashed">
-                  {/* Placeholder for service image */}
-                  <span className="text-muted-foreground font-medium italic">Service Imagery: {service.title}</span>
-                </div>
+                <h3 className="text-2xl font-semibold text-white mb-4 tracking-tight">{service.title}</h3>
+                <p className="text-lg text-white/60 leading-relaxed">
+                  {service.description}
+                </p>
               </div>
             ))}
+          </div>
+          
+          <div className="mt-16 text-center">
+             <p className="text-lg text-white/40 italic">
+               Experience our outstanding services. Contact Pacific Auto Body today.
+             </p>
           </div>
         </div>
       </section>
 
-      {/* Insurance Section */}
-      <section className="py-24 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto bg-background rounded-3xl p-8 md:p-16 border shadow-sm">
-            <div className="flex flex-col md:flex-row gap-12 items-center">
-              <div className="flex-1 space-y-6">
-                <div className="inline-flex items-center gap-2 text-primary font-bold tracking-wider uppercase text-sm">
-                  <Shield className="h-4 w-4" />
-                  Hassle-Free Repairs
-                </div>
-                <h2 className="text-3xl font-bold">We Work With All Insurance Companies</h2>
-                <p className="text-muted-foreground leading-relaxed">
-                  Navigating insurance claims can be stressful. We handle the paperwork and 
-                  communication with your insurance provider to ensure a smooth, worry-free 
-                  repair process from start to finish.
+      {/* The Pacific Auto Body Difference */}
+      <section className="py-32 bg-[#09090b] relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col lg:flex-row gap-20 items-center">
+            <div className="flex-1 space-y-12">
+              <div className="space-y-6">
+                <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
+                  Experience the <br />
+                  <span className="text-white/40">Pacific Auto Body Difference</span>
+                </h2>
+                <p className="text-xl text-white/60 leading-relaxed">
+                  Our commitment to delivering value-added services that caters to your unique needs sets us apart. 
+                  Here's what you can expect when you choose us:
                 </p>
-                <Button variant="outline" asChild>
-                  <Link href="/contact">Ask about insurance</Link>
-                </Button>
               </div>
-              <div className="flex-1 grid grid-cols-2 gap-4">
-                <div className="p-6 rounded-2xl bg-muted/50 text-center space-y-2">
-                  <ClipboardCheck className="h-8 w-8 mx-auto text-primary" />
-                  <p className="font-bold text-sm">Direct Billing</p>
+
+              <div className="space-y-8">
+                <div className="flex gap-6 p-8 rounded-3xl bg-white/5 border border-white/10 group hover:bg-white/[0.08] transition-all">
+                  <div className="shrink-0 w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
+                    <Award className="h-6 w-6 text-white" />
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="text-xl font-bold uppercase tracking-widest text-white/90">Minimum 5-Year Warranty</h4>
+                    <p className="text-white/60 leading-relaxed">We stand by our work, offering a minimum 5-year warranty on all our services.</p>
+                  </div>
                 </div>
-                <div className="p-6 rounded-2xl bg-muted/50 text-center space-y-2">
-                  <Hammer className="h-8 w-8 mx-auto text-primary" />
-                  <p className="font-bold text-sm">Expert Claims</p>
-                </div>
-                <div className="p-6 rounded-2xl bg-muted/50 text-center space-y-2">
-                  <Shield className="h-8 w-8 mx-auto text-primary" />
-                  <p className="font-bold text-sm">Fully Insured</p>
-                </div>
-                <div className="p-6 rounded-2xl bg-muted/50 text-center space-y-2">
-                  <Car className="h-8 w-8 mx-auto text-primary" />
-                  <p className="font-bold text-sm">Rental Assist</p>
+
+                <div className="flex gap-6 p-8 rounded-3xl bg-white/5 border border-white/10 group hover:bg-white/[0.08] transition-all">
+                  <div className="shrink-0 w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
+                    <Truck className="h-6 w-6 text-white" />
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="text-xl font-bold uppercase tracking-widest text-white/90">Towing Available</h4>
+                    <p className="text-white/60 leading-relaxed">We understand that breakdowns can happen. That's why we offer towing services during business hours.</p>
+                  </div>
                 </div>
               </div>
+              
+              <p className="text-lg text-white/40 font-medium tracking-wide uppercase italic">Reach out to Pacific Auto Body today.</p>
+            </div>
+            
+            <div className="flex-1 w-full aspect-square rounded-[3rem] bg-white/5 border border-white/10 flex items-center justify-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-tr from-white/[0.02] to-transparent" />
+                <span className="text-white/10 font-black text-9xl uppercase tracking-tighter opacity-10 select-none -rotate-12">Quality</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-24">
-        <div className="container mx-auto px-4 text-center space-y-8">
-          <h2 className="text-3xl font-bold">Ready to start your repair?</h2>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button size="lg" asChild>
-              <Link href="/contact">Request Your Free Estimate</Link>
-            </Button>
-            <Button size="lg" variant="outline" asChild>
-              <a href="tel:4242082113">Call (424) 208-2113</a>
-            </Button>
+      {/* Final CTA */}
+      <section className="py-32 border-t border-white/5">
+        <div className="container mx-auto px-6 text-center">
+          <div className="max-w-4xl mx-auto space-y-10">
+            <h2 className="text-5xl md:text-7xl font-bold tracking-tight">
+              Get in Touch with <br />
+              <span className="text-white/40">Pacific Auto Body</span>
+            </h2>
+            <p className="text-xl md:text-2xl text-white/60 leading-relaxed mx-auto">
+              Dents and scratches will bring down the value of your car. Contact Pacific Auto Body 
+              for impressive bodywork. Remember, your vehicle deserves the best, and that's what we offer. 
+              We look forward to hearing from you soon.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-6 pt-8">
+              <Button size="lg" asChild className="rounded-full bg-white text-black hover:bg-white/90 px-12 h-16 text-lg font-bold transition-transform hover:scale-105 active:scale-95">
+                <Link href="/contact">Request Free Estimate</Link>
+              </Button>
+              <Button size="lg" variant="outline" asChild className="rounded-full border-white/20 text-white hover:bg-white/10 px-12 h-16 text-lg font-bold backdrop-blur-sm transition-transform hover:scale-105 active:scale-95">
+                <a href="tel:4242082113">Call (424) 208-2113</a>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
     </div>
   );
 }
-

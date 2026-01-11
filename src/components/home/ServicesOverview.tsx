@@ -7,14 +7,14 @@ import Link from "next/link";
 const services = [
   {
     title: "Collision Repair",
-    description: "Precision-engineered restoration for elite vehicles, ensuring structural integrity and flawless bodywork.",
+    description: "Expert restoration for high-end vehicles, ensuring structural integrity and flawless bodywork.",
     icon: Car,
     href: "/services",
   },
   {
-    title: "Elite Refinishing",
-    description: "Computerized color matching and premium paint systems for a deep, factory-original finish.",
-    icon: Paintbrush,
+    title: "Bumper Repair",
+    description: "Professional repair for minor and major bumper damages, restoring safety and factory finish.",
+    icon: ShieldAlert,
     href: "/services",
   },
   {
@@ -24,8 +24,8 @@ const services = [
     href: "/services",
   },
   {
-    title: "Detailing & Finish",
-    description: "Meticulous paint correction and scratch removal for a showroom-perfect appearance.",
+    title: "Scratch & Dent",
+    description: "Meticulous paint correction and dent removal for a showroom-perfect appearance.",
     icon: Hammer,
     href: "/services",
   },
@@ -50,7 +50,7 @@ export function ServicesOverview() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="text-5xl md:text-7xl font-bold tracking-tight text-white"
+              className="text-4xl md:text-7xl font-bold tracking-tight text-white"
             >
               The Art of <br />
               <span className="text-white/40">Vehicle Restoration</span>
@@ -82,7 +82,7 @@ export function ServicesOverview() {
                 <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-8 border border-white/10 group-hover:scale-110 transition-transform duration-500">
                   <service.icon className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-3xl font-bold text-white mb-6 tracking-tight">{service.title}</h3>
+                <h3 className="text-3xl font-semibold text-white mb-6 tracking-tight">{service.title}</h3>
                 <p className="text-lg text-white/60 leading-relaxed mb-10 max-w-sm">
                   {service.description}
                 </p>

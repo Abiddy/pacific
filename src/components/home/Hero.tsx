@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Diamond, ArrowRight } from "lucide-react";
+import { Diamond, ArrowRight, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 
@@ -11,19 +11,19 @@ export function Hero() {
       {/* Background Image/Gradient */}
       <div className="absolute inset-0 z-0">
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-60"
+          className="absolute inset-0 bg-cover bg-center opacity-40"
           style={{ 
-            backgroundImage: "linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,1)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80')" 
+            backgroundImage: "linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,1)), url('https://images.unsplash.com/photo-1625047509168-a7026f36ae04?auto=format&fit=crop&q=80')" 
           }}
         />
         {/* Animated Radial Highlight */}
         <motion.div 
           animate={{ 
-            opacity: [0.3, 0.5, 0.3],
+            opacity: [0.2, 0.4, 0.2],
             scale: [1, 1.1, 1],
           }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,_rgba(59,130,246,0.15)_0%,_transparent_60%)]"
+          className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,_rgba(59,130,246,0.1)_0%,_transparent_60%)]"
         />
       </div>
 
@@ -36,9 +36,9 @@ export function Hero() {
             transition={{ duration: 0.6 }}
             className="inline-flex items-center space-x-2 rounded-full bg-white/5 border border-white/10 px-4 py-1.5 mb-8 backdrop-blur-sm"
           >
-            <Diamond className="h-4 w-4 text-white/80" />
+            <ShieldCheck className="h-4 w-4 text-white/80" />
             <span className="text-xs font-medium tracking-wide text-white/80 uppercase">
-              Chosen by more than 250 clients
+              25+ Years of Expert Craftsmanship
             </span>
           </motion.div>
           
@@ -47,10 +47,10 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-6xl md:text-8xl font-bold tracking-tight text-white leading-[1.1] mb-8"
+            className="text-4xl md:text-8xl font-bold tracking-tight text-white leading-[1.1] mb-8"
           >
-            Premium Car Rental <br />
-            <span className="text-white/40">in Los Angeles</span>
+            Expert Auto Body <br />
+            <span className="text-white/40">Restoration & Repair</span>
           </motion.h1>
           
           {/* Description */}
@@ -58,9 +58,10 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl text-white/60 max-w-2xl leading-relaxed mb-12"
+            className="text-base md:text-lg text-white/60 max-w-2xl leading-relaxed mb-12"
           >
-            Experience unmatched comfort, style, and service — wherever the road takes you.
+            Precision collision repair and factory-finish painting for high-end vehicles. 
+            We restore your peace of mind with a minimum 5-year warranty.
           </motion.p>
           
           {/* CTA Buttons */}
@@ -68,56 +69,31 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="flex flex-wrap gap-5"
+            className="flex flex-wrap gap-4"
           >
             <Button 
-              size="lg" 
+              size="md" 
               asChild 
-              className="rounded-full bg-white text-black hover:bg-white/90 px-8 h-14 text-lg font-bold transition-transform hover:scale-105 active:scale-95"
+              className="rounded-full bg-white text-black hover:bg-white/90 px-7 h-12 text-xs font-bold transition-transform hover:scale-105 active:scale-95"
             >
-              <Link href="/services">
-                Choose Your Car
+              <Link href="/contact">
+                Request Free Estimate
               </Link>
             </Button>
             <Button 
               variant="outline" 
-              size="lg" 
-              className="rounded-full border-white/20 text-white hover:bg-white/10 px-8 h-14 text-lg font-bold backdrop-blur-sm transition-transform hover:scale-105 active:scale-95"
+              size="md" 
+              className="rounded-full border-white/20 text-white hover:bg-white/10 px-7 h-12 text-xs font-bold backdrop-blur-sm transition-transform hover:scale-105 active:scale-95"
               asChild
             >
-              <Link href="/about">
-                Our Approach
-                <ArrowRight className="ml-2 h-5 w-5" />
+              <Link href="/services">
+                Our Services
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
           </motion.div>
         </div>
       </div>
-
-      {/* Floating Info Box (Bottom Right) */}
-      <motion.div
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1, delay: 1 }}
-        className="absolute bottom-12 right-12 hidden lg:block"
-      >
-        <div className="bg-white rounded-[2rem] p-8 w-64 shadow-2xl">
-          <p className="text-black/60 text-sm font-medium mb-4">Want this template?</p>
-          <div className="space-y-3">
-            <button className="w-full flex items-center justify-between px-5 py-3 bg-black text-white rounded-xl text-sm font-bold group">
-              Buy Template
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </button>
-            <button className="w-full text-center py-3 text-black text-sm font-bold hover:bg-black/5 rounded-xl transition-colors">
-              Our Approach
-            </button>
-          </div>
-          <div className="mt-6 pt-6 border-t border-black/5 flex items-center justify-center space-x-2">
-             <div className="w-4 h-4 bg-black rotate-45" />
-             <span className="text-xs font-bold text-black uppercase tracking-tighter">Made in Framer</span>
-          </div>
-        </div>
-      </motion.div>
     </section>
   );
 }
