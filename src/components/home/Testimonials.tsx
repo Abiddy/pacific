@@ -5,34 +5,54 @@ import { ShieldCheck } from "lucide-react";
 
 const testimonials = [
   {
-    content: "Perfect paint match on my Tesla, looks factory new!",
-    author: "MARIA RODRIGUEZ",
-    location: "LOS ANGELES",
+    content: "I recently had my car repaired at Pacific and I couldn't be happier. Donnie and his team were professional and friendly...",
+    author: "KEV NAL",
+    location: "GARDENA, CA",
   },
   {
-    content: "Best auto body shop I've ever used. Fast and honest.",
-    author: "JAMES CHEN",
-    location: "GARDENA",
+    content: "I like how the owner Donny operates. He is very respectful and empathetic. He will give you a quick quote at a fantastic price...",
+    author: "ISAAC MORRISON",
+    location: "LOS ANGELES, CA",
   },
   {
-    content: "Expert craftsmanship and incredible attention to detail.",
-    author: "ROBERT TAYLOR",
-    location: "TORRANCE",
+    content: "Love this body shop. Professional work with excellent price and great customer service. You can't go wrong here...",
+    author: "JACK DA RIPPER",
+    location: "GARDENA, CA",
   },
   {
-    content: "They handled my insurance claim perfectly. Zero stress.",
-    author: "SARAH M.",
-    location: "REDONDO BEACH",
+    content: "Amazing experience for a large dent in my car. Paint match was exact. Haven't had this good of service since living in Texas...",
+    author: "SCOTT",
+    location: "TORRANCE, CA",
   },
   {
-    content: "Restored my vintage Porsche to showroom condition.",
-    author: "DAVID M.",
-    location: "SANTA MONICA",
+    content: "You can't even tell the car was in an accident. I have a 2026 Tesla Model Y and they got the paint 100% perfect...",
+    author: "AHMED NGHAZI",
+    location: "LOS ANGELES, CA",
   },
   {
-    content: "Unbelievable quality and turnaround time. Highly recommend.",
-    author: "SOPHIE N.",
-    location: "CULVER CITY",
+    content: "By far one of the best places to go. Honest, fast, efficient and good customer service. Highly recommend!...",
+    author: "MOISES RAMIREZ",
+    location: "GARDENA, CA",
+  },
+  {
+    content: "Shout out to Pacific! They helped me fix my front bumper at a great price. They color matched it perfectly like nothing happened...",
+    author: "AONANI GOMEZ",
+    location: "SOUTH BAY, CA",
+  },
+  {
+    content: "Donnie and his crew worked on my bumper damaged 2022 Corvette C8 and did an excellent job! Perfect match of metallic paint...",
+    author: "SEKSAN SREPHICHIT",
+    location: "GARDENA, CA",
+  },
+  {
+    content: "I brought my car to Pacific Auto Body and it was an experience I'll never forget! The customer service was excellent...",
+    author: "LORNA GUZMAN",
+    location: "LOS ANGELES, CA",
+  },
+  {
+    content: "If I could put more than 5 stars I would. Went for a back panel repair and they made it better than new...",
+    author: "DANIEL ACOSTA",
+    location: "GARDENA, CA",
   },
 ];
 
@@ -43,7 +63,6 @@ export function Testimonials() {
   return (
     <section id="reviews" className="py-32 bg-black overflow-hidden">
       <div className="container mx-auto px-6 mb-20 text-center">
-        
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -51,7 +70,7 @@ export function Testimonials() {
           transition={{ duration: 0.8 }}
           className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-6"
         >
-          Client Stories      
+          Client Stories
         </motion.h2>
       </div>
 
@@ -68,17 +87,17 @@ export function Testimonials() {
               x: ["0%", "-33.333%"],
             }}
             transition={{
-              duration: 80, // Much slower
+              duration: 100, // Even slower for better readability of real reviews
               repeat: Infinity,
               ease: "linear",
             }}
           >
             {marqueeItems.map((t, i) => (
-                <div 
-                  key={i}
-                  className="inline-flex flex-col items-center px-8 md:px-24 text-center group w-[300px] md:w-[600px] whitespace-normal"
-                >
-                <p className="text-xl md:text-3xl font-medium text-white/70 group-hover:text-white transition-colors duration-500 mb-8 leading-tight">
+              <div 
+                key={i}
+                className="inline-flex flex-col items-center px-12 md:px-24 text-center group w-[400px] md:w-[600px] whitespace-normal"
+              >
+                <p className="text-xl md:text-2xl font-medium text-white/70 group-hover:text-white transition-colors duration-500 mb-8 leading-relaxed italic">
                   "{t.content}"
                 </p>
                 <div className="flex items-center justify-center space-x-3 text-[10px] md:text-[11px] font-bold tracking-[0.4em] text-white/30 uppercase shrink-0">

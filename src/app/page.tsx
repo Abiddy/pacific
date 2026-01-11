@@ -34,9 +34,11 @@ export default function Home() {
         </div>
       </section>
 
+      <Testimonials />
+
       <ServicesOverview />
       
-      <Testimonials />
+ 
 
       {/* Final CTA Section - Premium Dark Styling */}
       <section className="py-32 bg-black border-t border-white/5 relative overflow-hidden">
