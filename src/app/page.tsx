@@ -1,6 +1,7 @@
 import { Hero } from "@/components/home/Hero";
 import { ServicesOverview } from "@/components/home/ServicesOverview";
 import { Testimonials } from "@/components/home/Testimonials";
+import { WhyChooseUs } from "@/components/home/WhyChooseUs";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import { Phone, Calendar, ArrowRight } from "lucide-react";
@@ -37,9 +38,9 @@ export default function Home() {
       <Testimonials />
 
       <ServicesOverview />
-      
- 
 
+      <WhyChooseUs />
+      
       {/* Final CTA Section - Premium Dark Styling */}
       <section className="py-32 bg-black border-t border-white/5 relative overflow-hidden">
         {/* Subtle Background Accent */}
