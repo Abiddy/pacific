@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ShieldCheck } from "lucide-react";
+import { ShieldCheck, Heart } from "lucide-react";
+import { Button } from "@/components/ui/Button";
 
 const testimonials = [
   {
@@ -68,14 +69,14 @@ export function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-6"
+          className="text-2xl md:text-4xl font-bold tracking-tight text-white"
         >
           Client Stories
         </motion.h2>
       </div>
 
       {/* Marquee Container with Fade Effect */}
-      <div className="relative w-full">
+      <div className="relative w-full mb-20">
         {/* Left & Right Fade Masks */}
         <div className="absolute left-0 top-0 bottom-0 w-32 md:w-64 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-32 md:w-64 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
@@ -109,6 +110,32 @@ export function Testimonials() {
             ))}
           </motion.div>
         </div>
+      </div>
+
+      {/* Button centered below the reviews */}
+      <div className="container mx-auto px-6 text-center">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <Button 
+            variant="outline" 
+            size="md" 
+            className="rounded-full border-white/10 text-white/60 hover:text-white hover:bg-white/5 transition-all group px-8 h-12"
+            asChild
+          >
+            <a 
+              href="https://www.google.com/search?q=Pacific+Auto+Body+Reviews&sca_esv=4477dadd08604b1b&biw=1440&bih=778&aic=0&sxsrf=ANbL-n6710v-Z_BTUvZS7rmlNJqamNSVkQ%3A1768158969467&ei=-fZjacOhHK--kPIP44bC8A4&ved=0ahUKEwiDgqC6mYSSAxUvH0QIHWODEO4Q4dUDCBE&uact=5&oq=Pacific+Auto+Body+Reviews&gs_lp=Egxnd3Mtd2l6LXNlcnAiGVBhY2lmaWMgQXV0byBCb2R5IFJldmlld3MyChAAGLADGNYEGEcyChAAGLADGNYEGEcyChAAGLADGNYEGEcyChAAGLADGNYEGEcyChAAGLADGNYEGEcyDRAAGIAEGLADGEMYigVInQNQAFgAcAF4AZABAJgBAKABAKoBALgBA8gBAJgCAaACCJgDAIgGAZAGCZIHATGgBwCyBwC4BwDCBwMyLTHIBwaACAA&sclient=gws-wiz-serp&lqi=ChlQYWNpZmljIEF1dG8gQm9keSBSZXZpZXdzIgI4AUiEjsm-5YCAgAhaHxAAEAEQAhgAGAEYAiIRcGFjaWZpYyBhdXRvIGJvZHmSAQ5hdXRvX2JvZHlfc2hvcJoBJENoZERTVWhOTUc5blMwVkpRMEZuU1VSSWJEUm1WbXRSUlJBQuABAPoBBAggEEM#lkt=LocalPoiReviews&rlimm=3476381644719489464&lrd=0x80c2b43cfd5d1253:0x303e96afed3181b8,3,,,,"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Show us some love
+              <Heart className="ml-2 h-4 w-4 fill-transparent group-hover:fill-current transition-colors" />
+            </a>
+          </Button>
+        </motion.div>
       </div>
     </section>
   );
