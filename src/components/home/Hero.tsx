@@ -11,19 +11,24 @@ export function Hero() {
       {/* Background Image/Gradient */}
       <div className="absolute inset-0 z-0">
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-40"
+          className="absolute inset-0 bg-cover bg-center"
           style={{ 
-            backgroundImage: "linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,1)), url('https://images.unsplash.com/photo-1625047509168-a7026f36ae04?auto=format&fit=crop&q=80')" 
+            backgroundImage: "url('/p1.jpg')" 
           }}
         />
+        {/* Deep Vignette & Darkening Overlay */}
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_10%,_rgba(0,0,0,0.95)_100%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black" />
+        
         {/* Animated Radial Highlight */}
         <motion.div 
           animate={{ 
-            opacity: [0.2, 0.4, 0.2],
+            opacity: [0.1, 0.2, 0.1],
             scale: [1, 1.1, 1],
           }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,_rgba(59,130,246,0.1)_0%,_transparent_60%)]"
+          className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,_rgba(255,255,255,0.05)_0%,_transparent_60%)]"
         />
       </div>
 
