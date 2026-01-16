@@ -34,7 +34,7 @@ const features = [
 
 export function WhyChooseUs() {
   return (
-    <section className="py-32 bg-black border-t border-white/5 overflow-hidden">
+    <section className="py-32 bg-white border-t border-black/5 overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row gap-20 items-center">
           {/* Left Content */}
@@ -46,18 +46,18 @@ export function WhyChooseUs() {
               transition={{ duration: 0.8 }}
               className="space-y-6 text-center lg:text-left"
             >
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-black leading-tight">
                 Why Choose Pacific Auto Body for <br />
-                <span className="text-white/50">Your Auto Body Repair Needs?</span>
+                <span className="text-black/50">Your Auto Body Repair Needs?</span>
               </h2>
-              <p className="text-xl text-white/70 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium">
+              <p className="text-xl text-black/70 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium">
                 Trust family-owned Pacific Auto Body for the best auto body service in town. 
                 Our minimum 5-year warranty is a testament to our confidence in the quality of our work. 
                 We also offer convenient towing services during business hours. We are proud of our 25 years of experience! 
                 We invite you to call or visit us today.
               </p>
               <div className="pt-4">
-                <Button size="lg" asChild className="rounded-full bg-white text-black hover:bg-white/90 px-12 h-16 text-lg font-bold transition-transform hover:scale-105 active:scale-95">
+                <Button size="lg" asChild className="rounded-full bg-black text-white hover:bg-black/90 px-12 h-16 text-lg font-bold transition-transform hover:scale-105 active:scale-95 shadow-lg">
                   <Link href="/contact">
                     Visit Us
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -79,10 +79,10 @@ export function WhyChooseUs() {
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   className="flex items-center gap-6 group"
                 >
-                  <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:border-white/20 transition-all duration-500">
-                    <feature.icon className="h-7 w-7 text-white" />
+                  <div className="w-14 h-14 rounded-2xl bg-black/5 border border-black/10 flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:border-black/20 transition-all duration-500">
+                    <feature.icon className="h-7 w-7 text-black" />
                   </div>
-                  <h3 className="text-lg md:text-xl font-semibold text-white/80 leading-snug tracking-tight">
+                  <h3 className="text-lg md:text-xl font-semibold text-black/80 leading-snug tracking-tight">
                     {feature.title}
                   </h3>
                 </motion.div>

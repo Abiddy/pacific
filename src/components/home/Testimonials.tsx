@@ -62,14 +62,14 @@ export function Testimonials() {
   const marqueeItems = [...testimonials, ...testimonials, ...testimonials];
 
   return (
-    <section id="reviews" className="py-32 bg-black overflow-hidden">
+    <section id="reviews" className="py-32 bg-white overflow-hidden">
       <div className="container mx-auto px-6 mb-20 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-2xl md:text-4xl font-bold tracking-tight text-white"
+          className="text-2xl md:text-4xl font-bold tracking-tight text-black"
         >
           Client Stories
         </motion.h2>
@@ -78,8 +78,8 @@ export function Testimonials() {
       {/* Marquee Container with Fade Effect */}
       <div className="relative w-full mb-20">
         {/* Left & Right Fade Masks */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 md:w-64 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 md:w-64 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-32 md:w-64 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 md:w-64 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
         <div className="flex overflow-hidden">
           <motion.div 
@@ -98,12 +98,12 @@ export function Testimonials() {
                 key={i}
                 className="inline-flex flex-col items-center px-12 md:px-24 text-center group w-[400px] md:w-[600px] whitespace-normal"
               >
-                <p className="text-xl md:text-2xl font-medium text-white/70 group-hover:text-white transition-colors duration-500 mb-8 leading-relaxed italic">
+                <p className="text-xl md:text-2xl font-medium text-black/70 group-hover:text-black transition-colors duration-500 mb-8 leading-relaxed italic">
                   "{t.content}"
                 </p>
-                <div className="flex items-center justify-center space-x-3 text-[10px] md:text-[11px] font-bold tracking-[0.4em] text-white/30 uppercase shrink-0">
+                <div className="flex items-center justify-center space-x-3 text-[10px] md:text-[11px] font-bold tracking-[0.4em] text-black/30 uppercase shrink-0">
                   <span>{t.author}</span>
-                  <span className="w-1 h-1 bg-white/10 rounded-full" />
+                  <span className="w-1 h-1 bg-black/10 rounded-full" />
                   <span>{t.location}</span>
                 </div>
               </div>
@@ -123,7 +123,7 @@ export function Testimonials() {
           <Button 
             variant="outline" 
             size="md" 
-            className="rounded-full border-white/10 text-white/60 hover:text-white hover:bg-white/5 transition-all group px-8 h-12"
+            className="rounded-full border-black/10 text-black/60 hover:text-black hover:bg-black/5 transition-all group px-8 h-12 shadow-sm"
             asChild
           >
             <a 

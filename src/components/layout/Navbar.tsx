@@ -32,13 +32,13 @@ export function Navbar() {
       <div 
         className={cn(
           "container mx-auto flex h-14 items-center justify-between px-6 rounded-full transition-all duration-300",
-          scrolled ? "bg-black/80 backdrop-blur-md border border-white/10 shadow-2xl" : "bg-transparent"
+          scrolled ? "bg-white/80 backdrop-blur-md border border-black/10 shadow-lg" : "bg-transparent"
         )}
       >
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2 group">
-          <span className="text-xl font-bold tracking-tight text-white uppercase italic">
-            Pacific <span className="text-white/40">Auto Body</span>
+          <span className="text-xl font-bold tracking-tight text-black uppercase italic">
+            Pacific <span className="text-black/40">Auto Body</span>
           </span>
         </Link>
 
@@ -48,7 +48,7 @@ export function Navbar() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-medium text-white/70 transition-colors hover:text-white"
+              className="text-sm font-medium text-black/70 transition-colors hover:text-black"
             >
               {item.name}
             </Link>
@@ -57,20 +57,20 @@ export function Navbar() {
 
         {/* Desktop Actions */}
         <div className="hidden md:flex items-center space-x-5">
-          <div className="flex items-center space-x-4 border-r border-white/10 pr-5 mr-1">
-            <a href="#" className="text-white/60 hover:text-white transition-colors" aria-label="Instagram">
+          <div className="flex items-center space-x-4 border-r border-black/10 pr-5 mr-1">
+            <a href="#" className="text-black/60 hover:text-black transition-colors" aria-label="Instagram">
               <Instagram className="h-5 w-5" />
             </a>
-            <a href="#" className="text-white/60 hover:text-white transition-colors" aria-label="WhatsApp">
+            <a href="#" className="text-black/60 hover:text-black transition-colors" aria-label="WhatsApp">
               <MessageSquare className="h-5 w-5" />
             </a>
-            <a href="tel:4242082113" className="text-white/60 hover:text-white transition-colors" aria-label="Call Us">
+            <a href="tel:4242082113" className="text-black/60 hover:text-black transition-colors" aria-label="Call Us">
               <Phone className="h-5 w-5" />
             </a>
           </div>
           <Link
             href="/contact"
-            className="inline-flex h-10 items-center justify-center rounded-full bg-white px-6 text-sm font-bold text-black transition-transform hover:scale-105 active:scale-95"
+            className="inline-flex h-10 items-center justify-center rounded-full bg-black px-6 text-sm font-bold text-white transition-transform hover:scale-105 active:scale-95"
           >
             Get Estimate
           </Link>
@@ -78,7 +78,7 @@ export function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="inline-flex items-center justify-center rounded-full w-10 h-10 bg-white/10 text-white md:hidden"
+          className="inline-flex items-center justify-center rounded-full w-10 h-10 bg-black/5 text-black md:hidden"
           onClick={() => setIsOpen(!isOpen)}
           aria-expanded={isOpen}
           aria-label="Toggle navigation menu"
@@ -94,31 +94,31 @@ export function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-24 left-4 right-4 bg-black border border-white/10 rounded-3xl p-6 md:hidden z-50 shadow-2xl"
+            className="absolute top-24 left-4 right-4 bg-white border border-black/10 rounded-3xl p-6 md:hidden z-50 shadow-2xl"
           >
             <nav className="flex flex-col space-y-6">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-2xl font-semibold text-white/80 hover:text-white"
+                  className="text-2xl font-semibold text-black/80 hover:text-black"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="pt-6 border-t border-white/10 flex flex-col space-y-4">
+              <div className="pt-6 border-t border-black/10 flex flex-col space-y-4">
                 <Link
                   href="/contact"
-                  className="flex items-center justify-center h-14 rounded-2xl bg-white text-black font-bold text-lg"
+                  className="flex items-center justify-center h-14 rounded-2xl bg-black text-white font-bold text-lg"
                   onClick={() => setIsOpen(false)}
                 >
                   Get Estimate
                 </Link>
                 <div className="flex justify-center space-x-8 pt-2">
-                  <Instagram className="h-6 w-6 text-white/60" />
-                  <MessageSquare className="h-6 w-6 text-white/60" />
-                  <Phone className="h-6 w-6 text-white/60" />
+                  <Instagram className="h-6 w-6 text-black/60" />
+                  <MessageSquare className="h-6 w-6 text-black/60" />
+                  <Phone className="h-6 w-6 text-black/60" />
                 </div>
               </div>
             </nav>
