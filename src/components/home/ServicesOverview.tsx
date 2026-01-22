@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Car, Hammer, Paintbrush, Ruler, ShieldAlert, Truck, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import { TireModel } from "./TireModel";
 
 const services = [
   {
@@ -33,8 +34,17 @@ const services = [
 
 export function ServicesOverview() {
   return (
-    <section className="py-32 bg-white border-t border-black/5">
-      <div className="container mx-auto px-6">
+    <section className="relative py-32 border-t border-black/5 overflow-x-clip md:overflow-visible">
+      {/* 3D Tire Models on the edges */}
+      <div className="absolute left-0 top-20 w-[250px] md:w-[400px] lg:w-[500px] h-[500px] z-0 pointer-events-none -translate-x-1/2 opacity-50 md:opacity-100">
+        <TireModel side="left" />
+      </div>
+      
+      <div className="absolute right-0 top-1/2 w-[250px] md:w-[400px] lg:w-[500px] h-[500px] z-0 pointer-events-none translate-x-1/2 opacity-50 md:opacity-100">
+        <TireModel side="right" />
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-12">
           <div className="max-w-2xl">
             <motion.p
@@ -76,7 +86,7 @@ export function ServicesOverview() {
           {services.map((service, i) => (
             <div 
               key={service.title}
-              className="group p-12 md:p-16 bg-white hover:bg-slate-50 transition-colors duration-500 relative overflow-hidden"
+              className="group p-12 md:p-16 bg-white/40 backdrop-blur-md hover:bg-white/60 transition-colors duration-500 relative overflow-hidden"
             >
               <div className="relative z-10">
                 <div className="w-16 h-16 rounded-2xl bg-black/5 flex items-center justify-center mb-8 border border-black/10 group-hover:scale-110 transition-transform duration-500">

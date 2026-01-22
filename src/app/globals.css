@@ -33,13 +33,14 @@
 }
 
 :root {
-  --background: #ffffff;
+  --background: #d1d5db;
   --foreground: #000000;
 }
 
 html, body {
   max-width: 100vw;
   overflow-x: hidden;
+  background-color: var(--background);
 }
 
 body {
@@ -51,6 +52,19 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* Optimized background layer to avoid fixed background repaints */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image: radial-gradient(circle_at_50%_40%, rgba(255,255,255,1) 0%, rgba(180,188,201,1) 100%);
+  pointer-events: none;
+  transform: translateZ(0); /* Hardware acceleration */
+  backface-visibility: hidden;
+}
+
 
 * {
   border-color: var(--color-border);
@@ -97,3 +111,25 @@ body {
   background-color: rgba(0, 0, 0, 0.1);
   color: #000000;
 }
+
+/* Lenis Smooth Scroll CSS */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+

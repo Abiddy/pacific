@@ -62,7 +62,7 @@ export function Testimonials() {
   const marqueeItems = [...testimonials, ...testimonials, ...testimonials];
 
   return (
-    <section id="reviews" className="py-32 bg-white overflow-hidden">
+    <section id="reviews" className="py-32 overflow-hidden">
       <div className="container mx-auto px-6 mb-20 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -77,9 +77,9 @@ export function Testimonials() {
 
       {/* Marquee Container with Fade Effect */}
       <div className="relative w-full mb-20">
-        {/* Left & Right Fade Masks */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 md:w-64 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 md:w-64 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+        {/* Left & Right Fade Masks using current background color */}
+        <div className="absolute left-0 top-0 bottom-0 w-32 md:w-64 bg-gradient-to-r from-[var(--background)] to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 md:w-64 bg-gradient-to-l from-[var(--background)] to-transparent z-10 pointer-events-none" />
 
         <div className="flex overflow-hidden">
           <motion.div 

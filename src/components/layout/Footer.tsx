@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { Phone, MapPin, Clock, Mail, Instagram, Facebook, ArrowRight } from "lucide-react";
+import { Phone, MapPin, Clock, Mail, ArrowRight } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-white text-black pt-32 pb-12 border-t border-black/5">
+    <footer className="text-black pt-32 pb-12 border-t border-black/5">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
           {/* Brand Section */}
@@ -18,14 +18,6 @@ export function Footer() {
             <p className="text-2xl md:text-3xl text-black/60 leading-tight max-w-md font-medium">
               Elite vehicle restoration and collision repair for the most discerning drivers in Los Angeles.
             </p>
-            <div className="flex space-x-6">
-              <a href="#" className="w-12 h-12 rounded-full border border-black/10 flex items-center justify-center hover:bg-black hover:text-white transition-all duration-300">
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a href="#" className="w-12 h-12 rounded-full border border-black/10 flex items-center justify-center hover:bg-black hover:text-white transition-all duration-300">
-                <Instagram className="h-5 w-5" />
-              </a>
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -56,7 +48,7 @@ export function Footer() {
 
           {/* Contact Info */}
           <div className="lg:col-span-3 space-y-12">
-            <div className="bg-black/5 rounded-3xl p-8 border border-black/10">
+            <div className="bg-white/20 backdrop-blur-md rounded-3xl p-8 border border-black/10 shadow-sm">
               <h3 className="text-xl font-bold mb-6">Need an Estimate?</h3>
               <Link 
                 href="/contact" 

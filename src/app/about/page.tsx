@@ -4,7 +4,7 @@ import { Users, History, ShieldCheck, Heart } from "lucide-react";
 
 export default function AboutPage() {
   return (
-    <div className="flex flex-col w-full bg-white text-black font-sans">
+    <div className="flex flex-col w-full text-black font-sans">
       {/* Page Header */}
       <section className="relative py-32 overflow-hidden border-b border-black/5">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(0,0,0,0.03)_0%,transparent_50%)]" />
@@ -64,7 +64,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values Section */}
-      <section className="py-32 bg-slate-50 border-y border-black/5 relative overflow-hidden">
+      <section className="py-32 border-y border-black/5 relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.01)_0%,transparent_70%)] pointer-events-none" />
         <div className="container relative z-10 mx-auto px-6 text-center mb-24">
           <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-black">Our Core Values</h2>
@@ -105,7 +105,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-32 bg-white">
+      <section className="py-32">
         <div className="container mx-auto px-6 text-center space-y-12">
           <h2 className="text-5xl md:text-7xl font-bold tracking-tight text-black">Want to see <br /><span className="text-black/40">our work?</span></h2>
           <div className="flex flex-col sm:flex-row justify-center gap-6">

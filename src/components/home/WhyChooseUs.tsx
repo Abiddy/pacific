@@ -34,7 +34,7 @@ const features = [
 
 export function WhyChooseUs() {
   return (
-    <section className="py-32 bg-white border-t border-black/5 overflow-hidden">
+    <section className="py-32 border-t border-black/5 overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row gap-20 items-center">
           {/* Left Content */}

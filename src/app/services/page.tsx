@@ -30,7 +30,7 @@ const whyChooseUs = [
 
 export default function ServicesPage() {
   return (
-    <div className="flex flex-col w-full bg-white text-black font-sans">
+    <div className="flex flex-col w-full text-black font-sans">
       {/* Page Header */}
       <section className="relative py-32 overflow-hidden border-b border-black/5">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(0,0,0,0.03)_0%,transparent_50%)]" />
@@ -57,7 +57,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-32 border-b border-black/5 bg-white">
+      <section className="py-32 border-b border-black/5">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mb-24">
             <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-8 text-black">
@@ -93,7 +93,7 @@ export default function ServicesPage() {
       </section>
 
       {/* The Pacific Auto Body Difference */}
-      <section className="py-32 bg-slate-50 relative overflow-hidden">
+      <section className="py-32 relative overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row gap-20 items-center">
             <div className="flex-1 space-y-12">
@@ -142,7 +142,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-32 border-t border-black/5 bg-white">
+      <section className="py-32 border-t border-black/5">
         <div className="container mx-auto px-6 text-center">
           <div className="max-w-4xl mx-auto space-y-10">
             <h2 className="text-5xl md:text-7xl font-bold tracking-tight text-black">

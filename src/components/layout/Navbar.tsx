@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { Phone, Menu, X, Instagram, MessageSquare } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -57,15 +57,9 @@ export function Navbar() {
 
         {/* Desktop Actions */}
         <div className="hidden md:flex items-center space-x-5">
-          <div className="flex items-center space-x-4 border-r border-black/10 pr-5 mr-1">
-            <a href="#" className="text-black/60 hover:text-black transition-colors" aria-label="Instagram">
-              <Instagram className="h-5 w-5" />
-            </a>
-            <a href="#" className="text-black/60 hover:text-black transition-colors" aria-label="WhatsApp">
-              <MessageSquare className="h-5 w-5" />
-            </a>
-            <a href="tel:4242082113" className="text-black/60 hover:text-black transition-colors" aria-label="Call Us">
-              <Phone className="h-5 w-5" />
+          <div className="flex items-center border-r border-black/10 pr-5 mr-1">
+            <a href="tel:4242082113" className="text-sm font-bold text-black/60 hover:text-black transition-colors uppercase tracking-tight">
+              Text or Call: <span className="text-black italic">(424) 208-2113</span>
             </a>
           </div>
           <Link
@@ -78,7 +72,7 @@ export function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="inline-flex items-center justify-center rounded-full w-10 h-10 bg-black/5 text-black md:hidden"
+          className="inline-flex items-center justify-center rounded-full w-10 h-10 text-black md:hidden"
           onClick={() => setIsOpen(!isOpen)}
           aria-expanded={isOpen}
           aria-label="Toggle navigation menu"
@@ -115,10 +109,10 @@ export function Navbar() {
                 >
                   Get Estimate
                 </Link>
-                <div className="flex justify-center space-x-8 pt-2">
-                  <Instagram className="h-6 w-6 text-black/60" />
-                  <MessageSquare className="h-6 w-6 text-black/60" />
-                  <Phone className="h-6 w-6 text-black/60" />
+                <div className="flex justify-center pt-2">
+                  <a href="tel:4242082113" className="text-sm font-bold text-black/60 hover:text-black transition-colors uppercase tracking-tight">
+                    Text or Call: <span className="text-black italic">(424) 208-2113</span>
+                  </a>
                 </div>
               </div>
             </nav>

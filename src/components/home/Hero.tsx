@@ -1,19 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CarModel } from "./CarModel";
 
 export function Hero() {
   return (
-    <section className="relative h-screen overflow-hidden bg-[#d1d5db]">
-      {/* Background Studio Lighting */}
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_50%_40%,_rgba(255,255,255,1)_0%,_rgba(180,188,201,1)_100%)]" />
-
-      {/* 3D Car Canvas - Absolute Background/Foreground Layer */}
-      <div className="absolute inset-0 z-10 pointer-events-none">
-        <CarModel />
-      </div>
-
+    <section className="relative h-screen overflow-hidden">
       <div className="container relative z-20 mx-auto px-6 flex flex-col items-center justify-between h-full pt-32 pb-20">
         {/* Top Quote */}
         <div className="w-full text-center">

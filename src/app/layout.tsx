@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { SmoothScroll } from "@/components/layout/SmoothScroll";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -25,21 +26,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`scroll-smooth ${outfit.variable}`}>
+    <html lang="en" className={`${outfit.variable}`}>
       <body
         className="antialiased min-h-screen flex flex-col font-sans"
       >
-        <a href="#main-content" className="skip-link">
-          Skip to main content
-        </a>
-        
-        <Navbar />
-        
-        <main id="main-content" className="flex-grow">
-        {children}
-        </main>
-        
-        <Footer />
+        <SmoothScroll>
+          <a href="#main-content" className="skip-link">
+            Skip to main content
+          </a>
+          
+          <Navbar />
+          
+          <main id="main-content" className="flex-grow relative z-10">
+          {children}
+          </main>
+          
+          <Footer />
+        </SmoothScroll>
 
         {/* UserWay Accessibility Widget */}
         <Script
