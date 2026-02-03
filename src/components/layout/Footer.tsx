@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone, MapPin, Clock, Mail, ArrowRight } from "lucide-react";
+import { Phone, MapPin, Clock, Mail, ArrowRight, ExternalLink } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -72,10 +72,15 @@ export function Footer() {
         </div>
 
         <div className="pt-12 border-t border-black/5 flex flex-col md:flex-row justify-between items-center gap-8 text-sm font-medium tracking-wide">
-          <div className="flex items-center space-x-2 text-black/40 uppercase">
-             <div className="w-3 h-3 bg-black/40 rotate-45" />
-             <span>Made for Premium Performance</span>
-          </div>
+          <a 
+            href="https://work.devly.info/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="flex items-center space-x-1.5 text-black/70 uppercase hover:text-black transition-colors group"
+          >
+             <span>Powered by Devly Studios</span>
+             <ExternalLink className="w-3.5 h-3.5" />
+          </a>
           <p className="text-black/40 uppercase">© {currentYear} Pacific Auto Body. All rights reserved.</p>
           <div className="flex gap-8 text-black/40 uppercase">
             <Link href="/privacy" className="hover:text-black transition-colors">Privacy</Link>
