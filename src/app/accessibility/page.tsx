@@ -1,71 +1,78 @@
+import React from "react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Accessibility Statement | Pacific Auto Body",
+  description: "Our commitment to ensuring digital accessibility for people with disabilities.",
+};
+
 export default function AccessibilityPage() {
   return (
-    <div className="container mx-auto px-4 py-24 max-w-4xl">
-      <h1 className="text-4xl font-bold mb-8">Accessibility Statement</h1>
-      
-      <div className="prose prose-slate max-w-none space-y-8">
-        <section>
-          <h2 className="text-2xl font-bold mb-4">Our Commitment</h2>
-          <p className="text-lg text-muted-foreground">
-            Pacific Auto Body is committed to ensuring digital accessibility for people with disabilities. 
-            We are continually improving the user experience for everyone and applying the relevant 
-            accessibility standards, including Web Content Accessibility Guidelines (WCAG) 2.1 Level AA.
+    <div className="flex flex-col w-full text-black font-sans bg-white">
+      {/* Page Header */}
+      <section className="relative py-20 md:py-32 overflow-hidden border-b border-black/5">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,0,0,0.02)_0%,transparent_70%)]" />
+        <div className="container relative z-10 mx-auto px-6 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+            Accessibility <span className="text-black/40">Statement</span>
+          </h1>
+          <p className="text-lg text-black/60 max-w-2xl mx-auto font-medium">
+            Our commitment to ensuring digital accessibility for everyone.
           </p>
-        </section>
+        </div>
+      </section>
 
-        <section>
-          <h2 className="text-2xl font-bold mb-4">Measures to Support Accessibility</h2>
-          <p className="text-muted-foreground mb-4">
-            We take the following measures to ensure accessibility:
-          </p>
-          <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-            <li>Include accessibility as part of our mission statement.</li>
-            <li>Provide continuous accessibility training for our staff.</li>
-            <li>Assign clear accessibility targets and responsibilities.</li>
-            <li>Employ formal accessibility quality assurance methods.</li>
-          </ul>
-        </section>
+      {/* Content Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <div className="prose prose-lg prose-black max-w-none space-y-12">
+            
+            <div className="space-y-6">
+              <p className="text-xl leading-relaxed">
+                We are committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone and applying relevant accessibility standards.
+              </p>
+              <p className="text-xl leading-relaxed">
+                Our website aims to conform to the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA, which define requirements for designers and developers to improve accessibility for people with disabilities.
+              </p>
+              <p className="text-xl leading-relaxed">
+                Accessibility is an ongoing effort, and we regularly review our website to identify and fix potential accessibility barriers.
+              </p>
+            </div>
 
-        <section>
-          <h2 className="text-2xl font-bold mb-4">Conformance Status</h2>
-          <p className="text-muted-foreground">
-            The Web Content Accessibility Guidelines (WCAG) defines requirements for designers and developers 
-            to improve accessibility for people with disabilities. It defines three levels of conformance: 
-            Level A, Level AA, and Level AAA. <strong>Pacific Auto Body is fully conformant with WCAG 2.1 level AA.</strong>
-          </p>
-        </section>
+            <div className="space-y-6 pt-12 border-t border-black/5">
+              <h2 className="text-2xl font-bold uppercase tracking-widest text-black/40">Contact Us</h2>
+              <p className="text-xl leading-relaxed">
+                If you experience any difficulty accessing content on this website or have suggestions for improvement, please contact us:
+              </p>
+              <ul className="list-none space-y-4 text-xl">
+                <li className="flex items-center gap-4">
+                  <span className="font-bold text-black/40 w-24">Email:</span>
+                  <a href="mailto:support@yourdomain.com" className="hover:text-black/60 transition-colors underline underline-offset-4">support@yourdomain.com</a>
+                </li>
+                <li className="flex items-center gap-4">
+                  <span className="font-bold text-black/40 w-24">Subject:</span>
+                  <span className="italic text-black/60">Accessibility Assistance</span>
+                </li>
+              </ul>
+              <p className="text-xl leading-relaxed">
+                We aim to respond to accessibility feedback promptly and make reasonable efforts to address issues.
+              </p>
+            </div>
 
-        <section>
-          <h2 className="text-2xl font-bold mb-4">Technical Specifications</h2>
-          <p className="text-muted-foreground">
-            Accessibility of Pacific Auto Body relies on the following technologies to work with the 
-            particular combination of web browser and any assistive technologies or plugins installed on your computer:
-          </p>
-          <ul className="list-disc pl-6 space-y-2 text-muted-foreground mt-4">
-            <li>HTML</li>
-            <li>WAI-ARIA</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-          </ul>
-        </section>
+            <div className="space-y-6 pt-12 border-t border-black/5">
+              <h2 className="text-2xl font-bold uppercase tracking-widest text-black/40">Compliance Status</h2>
+              <p className="text-xl leading-relaxed">
+                While we strive to ensure full accessibility, some content or features may not yet fully conform to WCAG 2.1 AA standards. We are actively working to improve accessibility across our website.
+              </p>
+            </div>
 
-        <section className="bg-muted p-8 rounded-2xl">
-          <h2 className="text-2xl font-bold mb-4">Feedback & Contact</h2>
-          <p className="text-muted-foreground mb-6">
-            We welcome your feedback on the accessibility of our website. Please let us know if you 
-            encounter accessibility barriers:
-          </p>
-          <ul className="space-y-2">
-            <li><strong>Phone:</strong> <a href="tel:4242082113" className="text-primary hover:underline">(424) 208-2113</a></li>
-            <li><strong>Email:</strong> <a href="mailto:accessibility@pacificautobody.com" className="text-primary hover:underline">accessibility@pacificautobody.com</a></li>
-            <li><strong>Address:</strong> 17014 S. Western Ave, Gardena, CA 90247</li>
-          </ul>
-          <p className="mt-6 text-sm text-muted-foreground italic">
-            We try to respond to feedback within 2 business days.
-          </p>
-        </section>
-      </div>
+            <div className="pt-20 text-center text-black/30 font-bold uppercase tracking-widest text-sm">
+              <p>Last Updated: January 28, 2026</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
-

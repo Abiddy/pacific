@@ -2,7 +2,6 @@ import { Hero } from "@/components/home/Hero";
 import { ServicesOverview } from "@/components/home/ServicesOverview";
 import { Testimonials } from "@/components/home/Testimonials";
 import { WhyChooseUs } from "@/components/home/WhyChooseUs";
-import { CarModel } from "@/components/home/CarModel";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import { Phone, Calendar, ArrowRight } from "lucide-react";
@@ -10,11 +9,6 @@ import { Phone, Calendar, ArrowRight } from "lucide-react";
 export default function Home() {
   return (
     <>
-      {/* 3D Background for Landing Page - Absolute so we pass by it */}
-      <div className="absolute inset-x-0 top-0 h-screen z-0 pointer-events-none">
-        <CarModel />
-      </div>
-
       <Hero />
       
       {/* Featured Stats / Trust Badges */}

@@ -7,7 +7,7 @@ import { useScroll, useSpring, motion } from "framer-motion";
 import * as THREE from "three";
 
 function Model({ scrollProgress }: { scrollProgress: any }) {
-  const { scene } = useGLTF("/3d.glb");
+  const { scene } = useGLTF("/mercedes.glb");
   const modelRef = useRef<THREE.Group>(null);
 
   // Deeply optimize the scene geometry and materials
@@ -15,17 +15,20 @@ function Model({ scrollProgress }: { scrollProgress: any }) {
     const clone = scene.clone();
     clone.traverse((node: any) => {
       if (node.isMesh) {
-        // Disable everything expensive
         node.castShadow = false;
         node.receiveShadow = false;
-        node.matrixAutoUpdate = false; // Static matrices for sub-meshes
+        node.matrixAutoUpdate = false;
         node.updateMatrix();
         
         if (node.material) {
           node.material.precision = "lowp";
           node.material.dithering = false;
-          // If it's a standard/physical material, simplify it
           if (node.material.envMapIntensity) node.material.envMapIntensity = 0.5;
+          
+          // Performance optimization: disable transparency if not needed
+          if (node.material.opacity === 1) {
+            node.material.transparent = false;
+          }
         }
       }
     });
@@ -36,22 +39,26 @@ function Model({ scrollProgress }: { scrollProgress: any }) {
     if (modelRef.current) {
       const p = scrollProgress.get();
       
-      // 1. Rotation: Horizontal rotation as we scroll
-      modelRef.current.rotation.y = Math.PI / 2 + (p * Math.PI * 0.5);
+      // 1. Facing the front (Y rotation) - Flipped 180 degrees
+      modelRef.current.rotation.y = 0;
       
-      // 2. Vertical: Perfectly locked (no moving down)
+      // 2. Vertical: Perfectly locked
       modelRef.current.position.y = 0;
       
       // 3. Horizontal: Centered
       modelRef.current.position.x = 0;
       
-      // 4. Scale: Fixed (no growth)
-      const fixedScale = 180;
+      // 4. Scale: Bumping this up significantly since it's too small
+      const fixedScale = 95; 
       modelRef.current.scale.set(fixedScale, fixedScale, fixedScale);
       
-      // 5. Tilt: Side-tilt as we scroll down
-      modelRef.current.rotation.z = p * 0.25;
-      modelRef.current.rotation.x = 0;
+      // 5. UPWARD ROTATION (Pitch): 
+      // Flipped 180 degrees on the vertical axis (relative to the car)
+      const startRotationX = Math.PI + 9.8; 
+      const endRotationX = Math.PI + 5;   
+      modelRef.current.rotation.x = startRotationX + (p * (endRotationX - startRotationX));
+      
+      modelRef.current.rotation.z = 0;
     }
   });
 
@@ -59,7 +66,7 @@ function Model({ scrollProgress }: { scrollProgress: any }) {
     <primitive 
       ref={modelRef} 
       object={optimizedScene} 
-      scale={180} 
+      scale={12} 
       position={[0, 0, 0]} 
     />
   );
@@ -84,21 +91,21 @@ export function CarModel() {
       animate={{ opacity: 1 }}
       transition={{ duration: 1.5, ease: "easeOut", delay: 0.5 }}
       className="w-full h-full relative pointer-events-none"
+      role="img"
+      aria-label="3D model of a Mercedes-Benz C-Class being restored"
     >
       <Canvas
         shadows={false}
-        camera={{ position: [0, 0, 15], fov: 35, near: 1, far: 50 }}
+        camera={{ position: [0, 0, 10], fov: 35, near: 0.1, far: 100 }}
         gl={{ 
-          antialias: false,
+          antialias: false, // Performance: Disable antialias for mobile/low-end
           alpha: true, 
           powerPreference: "high-performance",
+          precision: "lowp", // Performance: Lower precision
           stencil: false,
-          depth: true,
-          precision: "lowp",
-          preserveDrawingBuffer: false,
-          failIfMajorPerformanceCaveat: false
+          depth: true
         }}
-        dpr={[1, 1]} // Lock to 1x DPR for maximum performance across all devices
+        dpr={[1, 1.5]} // Performance: Cap DPR
       >
         <Suspense fallback={null}>
           <AdaptiveDpr pixelated />
@@ -106,24 +113,17 @@ export function CarModel() {
           <Bvh firstHitOnly>
             <Model scrollProgress={smoothProgress} />
           </Bvh>
-          <Environment preset="city" frames={1} />
+          <Environment preset="city" />
           <Preload all />
         </Suspense>
         
-        <ContactShadows
-          position={[0, -2.5, 0]}
-          opacity={0.15}
-          scale={40} 
-          blur={2.5}
-          far={10}
-          resolution={128}
-        />
-        
-        <ambientLight intensity={1.5} />
-        <pointLight position={[10, 10, 10]} intensity={1.5} />
+        <ambientLight intensity={3} />
+        <directionalLight position={[10, 10, 10]} intensity={3} />
+        <pointLight position={[-15, 15, 15]} intensity={3} />
+        <spotLight position={[0, 20, 0]} intensity={2} angle={0.5} penumbra={1} />
       </Canvas>
     </motion.div>
   );
 }
 
-useGLTF.preload("/3d.glb");
+useGLTF.preload("/mercedes.glb");

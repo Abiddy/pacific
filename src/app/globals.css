@@ -33,7 +33,7 @@
 }
 
 :root {
-  --background: #d1d5db;
+  --background: #ffffff;
   --foreground: #000000;
 }
 
@@ -53,13 +53,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Optimized background layer to avoid fixed background repaints */
+/* Optimized background layer - Simple white background */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -2;
-  background-image: radial-gradient(circle_at_50%_40%, rgba(255,255,255,1) 0%, rgba(180,188,201,1) 100%);
+  background-color: #ffffff;
   pointer-events: none;
   transform: translateZ(0); /* Hardware acceleration */
   backface-visibility: hidden;
@@ -74,6 +74,18 @@ body::before {
 :focus-visible {
   outline: 2px solid #000000;
   outline-offset: 2px;
+}
+
+/* Ensure links are distinguishable */
+main a:not([class*="rounded-full"]):not([class*="bg-black"]) {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-color 0.3s;
+}
+
+main a:not([class*="rounded-full"]):not([class*="bg-black"]):hover {
+  text-decoration-thickness: 2px;
 }
 
 .skip-link {

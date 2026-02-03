@@ -86,7 +86,13 @@ export function TireModel({ side }: { side: "left" | "right" }) {
       <Canvas
         shadows={false} // Global shadow kill switch
         camera={{ position: [0, 0, 5], fov: 40 }}
-        gl={{ antialias: true, alpha: true }}
+        gl={{ 
+          antialias: false, 
+          alpha: true,
+          powerPreference: "high-performance",
+          stencil: false
+        }}
+        dpr={[1, 1.5]}
       >
         <Suspense fallback={null}>
           <Environment preset="city" />

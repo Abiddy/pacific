@@ -58,50 +58,88 @@ const testimonials = [
 ];
 
 export function Testimonials() {
-  // Triple the items to ensure a seamless infinite scroll
-  const marqueeItems = [...testimonials, ...testimonials, ...testimonials];
+  // Split testimonials into two groups for two rows
+  const row1 = testimonials.slice(0, Math.ceil(testimonials.length / 2));
+  const row2 = testimonials.slice(Math.ceil(testimonials.length / 2));
+
+  // Triple items for seamless looping
+  const marquee1 = [...row1, ...row1, ...row1];
+  const marquee2 = [...row2, ...row2, ...row2];
 
   return (
-    <section id="reviews" className="py-32 overflow-hidden">
+    <section id="reviews" className="py-32 overflow-hidden bg-white" aria-labelledby="reviews-title">
       <div className="container mx-auto px-6 mb-20 text-center">
         <motion.h2
+          id="reviews-title"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-2xl md:text-4xl font-bold tracking-tight text-black"
+          className="text-3xl md:text-5xl font-bold tracking-tight text-black"
         >
           Client Stories
         </motion.h2>
       </div>
 
       {/* Marquee Container with Fade Effect */}
-      <div className="relative w-full mb-20">
-        {/* Left & Right Fade Masks using current background color */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 md:w-64 bg-gradient-to-r from-[var(--background)] to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 md:w-64 bg-gradient-to-l from-[var(--background)] to-transparent z-10 pointer-events-none" />
+      <div className="relative w-full space-y-12 mb-20" role="region" aria-label="Customer testimonials marquee">
+        {/* Left & Right Fade Masks */}
+        <div className="absolute left-0 top-0 bottom-0 w-32 md:w-64 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" aria-hidden="true" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 md:w-64 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" aria-hidden="true" />
 
-        <div className="flex overflow-hidden">
+        {/* Row 1: Left to Right */}
+        <div className="flex overflow-hidden border-y border-black/5 py-12">
           <motion.div 
-            className="flex whitespace-nowrap py-12"
+            className="flex whitespace-nowrap"
             animate={{
-              x: ["0%", "-33.333%"],
+              x: ["-33.333%", "0%"],
             }}
             transition={{
-              duration: 100, // Even slower for better readability of real reviews
+              duration: 80,
               repeat: Infinity,
               ease: "linear",
             }}
           >
-            {marqueeItems.map((t, i) => (
+            {marquee1.map((t, i) => (
               <div 
                 key={i}
-                className="inline-flex flex-col items-center px-12 md:px-24 text-center group w-[400px] md:w-[600px] whitespace-normal"
+                className="inline-flex flex-col items-center px-12 md:px-20 text-center w-[350px] md:w-[500px] whitespace-normal border-r border-black/5 last:border-r-0"
               >
-                <p className="text-xl md:text-2xl font-medium text-black/70 group-hover:text-black transition-colors duration-500 mb-8 leading-relaxed italic">
+                <p className="text-lg md:text-xl font-medium text-black/80 mb-6 leading-relaxed italic">
                   "{t.content}"
                 </p>
-                <div className="flex items-center justify-center space-x-3 text-[10px] md:text-[11px] font-bold tracking-[0.4em] text-black/30 uppercase shrink-0">
+                <div className="flex items-center justify-center space-x-3 text-[10px] font-bold tracking-[0.3em] text-black/40 uppercase">
+                  <span>{t.author}</span>
+                  <span className="w-1 h-1 bg-black/10 rounded-full" />
+                  <span>{t.location}</span>
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Row 2: Right to Left */}
+        <div className="flex overflow-hidden border-b border-black/5 pb-12">
+          <motion.div 
+            className="flex whitespace-nowrap"
+            animate={{
+              x: ["0%", "-33.333%"],
+            }}
+            transition={{
+              duration: 90, // Slightly different speed for visual interest
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          >
+            {marquee2.map((t, i) => (
+              <div 
+                key={i}
+                className="inline-flex flex-col items-center px-12 md:px-20 text-center w-[350px] md:w-[500px] whitespace-normal border-r border-black/5 last:border-r-0"
+              >
+                <p className="text-lg md:text-xl font-medium text-black/80 mb-6 leading-relaxed italic">
+                  "{t.content}"
+                </p>
+                <div className="flex items-center justify-center space-x-3 text-[10px] font-bold tracking-[0.3em] text-black/40 uppercase">
                   <span>{t.author}</span>
                   <span className="w-1 h-1 bg-black/10 rounded-full" />
                   <span>{t.location}</span>

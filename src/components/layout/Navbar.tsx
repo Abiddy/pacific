@@ -36,7 +36,7 @@ export function Navbar() {
         )}
       >
         {/* Logo */}
-        <Link href="/" className="flex items-center space-x-2 group">
+        <Link href="/" className="flex items-center space-x-2 group" aria-label="Pacific Auto Body Home">
           <span className="text-xl font-bold tracking-tight text-black uppercase italic">
             Pacific <span className="text-black/40">Auto Body</span>
           </span>
@@ -58,13 +58,13 @@ export function Navbar() {
         {/* Desktop Actions */}
         <div className="hidden md:flex items-center space-x-5">
           <div className="flex items-center border-r border-black/10 pr-5 mr-1">
-            <a href="tel:4242082113" className="text-sm font-bold text-black/60 hover:text-black transition-colors uppercase tracking-tight">
-              Text or Call: <span className="text-black italic">(424) 208-2113</span>
+            <a href="tel:4242082113" className="min-h-[44px] flex items-center text-sm font-bold text-black/60 hover:text-black transition-colors uppercase tracking-tight">
+              Text or Call: <span className="text-black italic ml-1">(424) 208-2113</span>
             </a>
           </div>
           <Link
             href="/contact"
-            className="inline-flex h-10 items-center justify-center rounded-full bg-black px-6 text-sm font-bold text-white transition-transform hover:scale-105 active:scale-95"
+            className="inline-flex h-11 items-center justify-center rounded-full bg-black px-6 text-sm font-bold text-white transition-transform hover:scale-105 active:scale-95 min-w-[120px]"
           >
             Get Estimate
           </Link>
@@ -72,12 +72,12 @@ export function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="inline-flex items-center justify-center rounded-full w-10 h-10 text-black md:hidden"
+          className="inline-flex items-center justify-center rounded-full w-11 h-11 text-black md:hidden"
           onClick={() => setIsOpen(!isOpen)}
           aria-expanded={isOpen}
           aria-label="Toggle navigation menu"
         >
-          {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
 

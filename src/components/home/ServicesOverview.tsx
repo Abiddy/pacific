@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Car, Hammer, Paintbrush, Ruler, ShieldAlert, Truck, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { TireModel } from "./TireModel";
@@ -47,30 +44,20 @@ export function ServicesOverview() {
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-12">
           <div className="max-w-2xl">
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-xs font-bold tracking-[0.2em] text-black/40 uppercase mb-4"
+            <p
+              className="text-xs font-bold tracking-[0.2em] text-black/40 uppercase mb-4 opacity-100 translate-y-0"
             >
               Our Expertise
-            </motion.p>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="text-4xl md:text-7xl font-bold tracking-tight text-black"
+            </p>
+            <h2
+              className="text-4xl md:text-7xl font-bold tracking-tight text-black opacity-100 translate-y-0"
             >
               The Art of <br />
               <span className="text-black/40">Vehicle Restoration</span>
-            </motion.h2>
+            </h2>
           </div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
+          <div
+            className="opacity-100"
           >
             <Link 
               href="/services" 
@@ -79,14 +66,14 @@ export function ServicesOverview() {
               <span className="text-lg font-medium">View All Services</span>
               <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
             </Link>
-          </motion.div>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-black/10 border border-black/10 rounded-[2.5rem] overflow-hidden shadow-sm">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-black/5 border border-black/5 rounded-[2.5rem] overflow-hidden shadow-sm">
           {services.map((service, i) => (
             <div 
               key={service.title}
-              className="group p-12 md:p-16 bg-white/40 backdrop-blur-md hover:bg-white/60 transition-colors duration-500 relative overflow-hidden"
+              className="group p-12 md:p-16 bg-white hover:bg-slate-50 transition-colors duration-500 relative overflow-hidden"
             >
               <div className="relative z-10">
                 <div className="w-16 h-16 rounded-2xl bg-black/5 flex items-center justify-center mb-8 border border-black/10 group-hover:scale-110 transition-transform duration-500">

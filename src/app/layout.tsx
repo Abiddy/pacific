@@ -10,6 +10,8 @@ const outfit = Outfit({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-outfit",
+  preload: true,
+  adjustFontFallback: true,
 });
 
 export const metadata: Metadata = {
@@ -44,10 +46,10 @@ export default function RootLayout({
           <Footer />
         </SmoothScroll>
 
-        {/* UserWay Accessibility Widget */}
+        {/* UserWay Accessibility Widget - Load lazily */}
         <Script
           id="userway-accessibility"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           src="https://cdn.userway.org/widget.js"
           data-account="REPLACE_WITH_YOUR_ID"
           data-position="3" 

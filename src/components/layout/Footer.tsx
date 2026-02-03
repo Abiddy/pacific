@@ -80,6 +80,7 @@ export function Footer() {
           <div className="flex gap-8 text-black/40 uppercase">
             <Link href="/privacy" className="hover:text-black transition-colors">Privacy</Link>
             <Link href="/terms" className="hover:text-black transition-colors">Terms</Link>
+            <Link href="/accessibility" className="hover:text-black transition-colors">Accessibility</Link>
           </div>
         </div>
       </div>
