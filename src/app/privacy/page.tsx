@@ -1,5 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Pacific Auto Body",
@@ -27,9 +28,9 @@ export default function PrivacyPage() {
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="prose prose-lg prose-black max-w-none space-y-12">
             
-            {/* AudioEye Notice */}
+            {/* Accessibility Link Notice */}
             <div className="p-6 bg-black/5 rounded-2xl border border-black/5 text-sm md:text-base leading-relaxed text-black/60 italic">
-              This website is AudioEye enabled and is being optimized for accessibility. To open the AudioEye Toolbar, press "shift + =". Some assistive technologies may require the use of a passthrough function before this keystroke. For more information, activate the button labeled "Explore your accessibility options".
+              We are committed to digital accessibility. For more information, please review our <Link href="/accessibility" className="underline hover:text-black transition-colors font-bold">Accessibility Statement</Link>.
             </div>
 
             <div className="space-y-6">
@@ -66,7 +67,7 @@ export default function PrivacyPage() {
                 <li>We may collect information you provide when you contact us by phone, email, text message or messaging application on social media.</li>
                 <li>We may collect social network profile information that you have made publicly available through your social network account settings if you choose to access our social media pages or connect or otherwise link to our Site with your own social media page. We also may collect customers’ and public feedback on social media.</li>
                 <li>We may collect information such as your name and phone number if we are engaging in SMS text messaging marketing and you opt in to our text messaging campaign.</li>
-                <li>Our Site may use cookies, tracking pixels and other similar technologies to collect information about visitors to our Site. A cookie is a small amount of data that is sent to your browser from a Web server and stored on your computer's hard drive. A tracking pixel is a graphic that i loaded when a user visits a website or opens an email and is used to track certain user activities.</li>
+                <li>Our Site may use tracking pixels and other similar technologies to collect information about visitors to our Site. A tracking pixel is a graphic that is loaded when a user visits a website or opens an email and is used to track certain user activities.</li>
               </ul>
             </div>
 
@@ -87,7 +88,7 @@ export default function PrivacyPage() {
                 <li>Conduct market research in order to serve targeted advertisements.</li>
               </ul>
               <p className="text-xl leading-relaxed pt-4">
-                We and our third-party service providers may use the information collected from cookies, tracking pixels and other similar technologies to target advertising to you personally, through online and offline methods including email, display media, video media and direct mail.
+                We and our third-party service providers may use the information collected from tracking pixels and other similar technologies to target advertising to you personally, through online and offline methods including email, display media, video media and direct mail.
               </p>
               <p className="text-xl leading-relaxed">
                 When you log in to or visit our Site, your IP address may be combined with other de-identified data (such as a hashed, non-readable email or postal address) and such information may be used by third-party service providers to send ads and materials to you based on your preferences, interests and attributes.
@@ -103,7 +104,7 @@ export default function PrivacyPage() {
                 <li>We may share your personal information with any member of our group of companies (our subsidiaries and our ultimate parent company and its subsidiaries).</li>
                 <li>We may share your personal information with companies that provide services to us, such as credit card processors, website hosts, email vendors and other companies that help us provide our services or our Site.</li>
                 <li>We may disclose your personal information in response to legal process, when required to comply with laws, to combat fraudulent or criminal activity, to enforce our agreements, corporate policies and the terms of use of our Site, and to protect the rights, property and safety of our business, our employees, agents, customers or others.</li>
-                <li>We may share technical data that we collect about your browsing habits and your device (such as data collected via our cookies, tracking pixels and similar technologies, as discussed above) with third-party service providers and other advertising companies. This enables them and us to better target ads to you and other consumers.</li>
+                <li>We may share technical data that we collect about your browsing habits and your device (such as data collected via tracking pixels and similar technologies, as discussed above) with third-party service providers and other advertising companies. This enables them and us to better target ads to you and other consumers.</li>
               </ul>
             </div>
 

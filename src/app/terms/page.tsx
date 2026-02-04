@@ -1,5 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Terms and Conditions | Pacific Auto Body",
@@ -27,6 +28,11 @@ export default function TermsPage() {
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="prose prose-lg prose-black max-w-none space-y-12">
             
+            {/* Accessibility Link Notice */}
+            <div className="p-6 bg-black/5 rounded-2xl border border-black/5 text-sm md:text-base leading-relaxed text-black/60 italic">
+              We are committed to digital accessibility. For more information, please review our <Link href="/accessibility" className="underline hover:text-black transition-colors font-bold">Accessibility Statement</Link>.
+            </div>
+
             <div className="space-y-6">
               <p className="text-xl leading-relaxed">
                 1. This website promotes the business referred to on it. In these conditions, the business will be referred to as ‘we’ and/or ’our’.
@@ -70,7 +76,7 @@ export default function TermsPage() {
             <div className="space-y-6 pt-12 border-t border-black/5">
               <h2 className="text-2xl font-bold uppercase tracking-widest text-black/40">Using this website</h2>
               <p className="text-xl leading-relaxed">
-                6. We collect and use information in line with our Privacy Policy. By using this website, you agree to the way in which we collect and use your information.
+                6. We collect and use information in line with our <Link href="/privacy" className="underline hover:text-black transition-colors font-bold">Privacy Policy</Link>. By using this website, you agree to the way in which we collect and use your information.
               </p>
               <div className="space-y-4">
                 <p className="text-xl leading-relaxed">
