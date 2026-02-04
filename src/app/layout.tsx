@@ -29,6 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${outfit.variable}`}>
+      <head>
+        <link rel="preload" href="/mercedes.glb" as="fetch" crossOrigin="anonymous" />
+      </head>
       <body
         className="antialiased min-h-screen flex flex-col font-sans"
       >

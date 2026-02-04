@@ -6,9 +6,16 @@ import { useGLTF, Environment, ContactShadows, AdaptiveDpr, AdaptiveEvents, Bvh,
 import { useScroll, useSpring, motion } from "framer-motion";
 import * as THREE from "three";
 
-function Model({ scrollProgress }: { scrollProgress: any }) {
+function Model({ scrollProgress, onLoad }: { scrollProgress: any, onLoad?: () => void }) {
   const { scene } = useGLTF("/mercedes.glb");
   const modelRef = useRef<THREE.Group>(null);
+
+  // Trigger onLoad when the component mounts (since useGLTF is preloaded or cached)
+  React.useEffect(() => {
+    if (scene && onLoad) {
+      onLoad();
+    }
+  }, [scene, onLoad]);
 
   // Deeply optimize the scene geometry and materials
   const optimizedScene = useMemo(() => {
@@ -72,7 +79,7 @@ function Model({ scrollProgress }: { scrollProgress: any }) {
   );
 }
 
-export function CarModel() {
+export function CarModel({ onLoad }: { onLoad?: () => void }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll();
 
@@ -85,11 +92,8 @@ export function CarModel() {
   });
 
   return (
-    <motion.div 
+    <div 
       ref={containerRef} 
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1.5, ease: "easeOut", delay: 0.5 }}
       className="w-full h-full relative pointer-events-none"
       role="img"
       aria-label="3D model of a Mercedes-Benz C-Class being restored"
@@ -111,7 +115,7 @@ export function CarModel() {
           <AdaptiveDpr pixelated />
           <AdaptiveEvents />
           <Bvh firstHitOnly>
-            <Model scrollProgress={smoothProgress} />
+            <Model scrollProgress={smoothProgress} onLoad={onLoad} />
           </Bvh>
           <Environment preset="city" />
           <Preload all />
@@ -122,7 +126,7 @@ export function CarModel() {
         <pointLight position={[-15, 15, 15]} intensity={3} />
         <spotLight position={[0, 20, 0]} intensity={2} angle={0.5} penumbra={1} />
       </Canvas>
-    </motion.div>
+    </div>
   );
 }
 
