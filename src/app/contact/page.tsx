@@ -1,8 +1,9 @@
 "use client";
 
 import { useState, useRef } from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/Button";
-import { Phone, MapPin, Clock, Mail, MessageSquare, Send, CheckCircle2, AlertCircle, Upload, X as CloseIcon } from "lucide-react";
+import { MessageSquare, Send, CheckCircle2, AlertCircle, Upload, X as CloseIcon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
