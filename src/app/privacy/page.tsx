@@ -5,6 +5,10 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Privacy Policy | Pacific Auto Body",
   description: "How we collect, use and disclose personal information of users of our services.",
+  openGraph: {
+    title: "Privacy Policy | Pacific Auto Body",
+    description: "Learn how we protect and respect your privacy at Pacific Auto Body.",
+  },
 };
 
 export default function PrivacyPage() {

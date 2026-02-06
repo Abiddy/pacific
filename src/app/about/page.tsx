@@ -1,6 +1,16 @@
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import { Users, History, ShieldCheck, Heart } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description: "Pacific Auto Body is a family-owned collision repair shop in Gardena, CA. With over 25 years of experience, we provide high-quality, honest, and reliable auto body services.",
+  openGraph: {
+    title: "About Pacific Auto Body | Family Owned Since 2001",
+    description: "Learn about our 25-year legacy of quality craftsmanship and honest service in the Gardena and South Bay community.",
+  },
+};
 
 export default function AboutPage() {
   return (

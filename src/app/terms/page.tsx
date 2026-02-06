@@ -5,6 +5,10 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Terms and Conditions | Pacific Auto Body",
   description: "Conditions of using our website and intellectual property rights.",
+  openGraph: {
+    title: "Terms and Conditions | Pacific Auto Body",
+    description: "Read our terms and conditions for using our website and services.",
+  },
 };
 
 export default function TermsPage() {

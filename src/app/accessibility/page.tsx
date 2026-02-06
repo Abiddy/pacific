@@ -4,6 +4,10 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Accessibility Statement | Pacific Auto Body",
   description: "Our commitment to ensuring digital accessibility for people with disabilities.",
+  openGraph: {
+    title: "Accessibility Statement | Pacific Auto Body",
+    description: "Our commitment to ensuring digital accessibility for people with disabilities, following WCAG 2.1 AA standards.",
+  },
 };
 
 export default function AccessibilityPage() {
@@ -47,7 +51,7 @@ export default function AccessibilityPage() {
               <ul className="list-none space-y-4 text-xl">
                 <li className="flex items-center gap-4">
                   <span className="font-bold text-black/40 w-24">Email:</span>
-                  <a href="mailto:support@yourdomain.com" className="hover:text-black/60 transition-colors underline underline-offset-4">support@yourdomain.com</a>
+                  <a href="mailto:info@pacificautobody.com" className="hover:text-black/60 transition-colors underline underline-offset-4">info@pacificautobody.com</a>
                 </li>
                 <li className="flex items-center gap-4">
                   <span className="font-bold text-black/40 w-24">Subject:</span>

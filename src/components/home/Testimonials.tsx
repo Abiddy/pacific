@@ -67,8 +67,8 @@ export function Testimonials() {
   const marquee2 = [...row2, ...row2, ...row2];
 
   return (
-    <section id="reviews" className="py-32 overflow-hidden bg-white" aria-labelledby="reviews-title">
-      <div className="container mx-auto px-6 mb-20 text-center">
+    <section id="reviews" className="py-20 md:py-32 overflow-hidden bg-white" aria-labelledby="reviews-title">
+      <div className="container mx-auto px-6 mb-12 md:mb-20 text-center">
         <motion.h2
           id="reviews-title"
           initial={{ opacity: 0, y: 20 }}
@@ -82,13 +82,13 @@ export function Testimonials() {
       </div>
 
       {/* Marquee Container with Fade Effect */}
-      <div className="relative w-full space-y-12 mb-20" role="region" aria-label="Customer testimonials marquee">
+      <div className="relative w-full space-y-8 md:space-y-12 mb-16 md:mb-20" role="region" aria-label="Customer testimonials marquee">
         {/* Left & Right Fade Masks */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 md:w-64 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" aria-hidden="true" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 md:w-64 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" aria-hidden="true" />
+        <div className="absolute left-0 top-0 bottom-0 w-24 md:w-64 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" aria-hidden="true" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 md:w-64 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" aria-hidden="true" />
 
         {/* Row 1: Left to Right */}
-        <div className="flex overflow-hidden border-y border-black/5 py-12">
+        <div className="flex overflow-hidden border-y border-black/5 py-8 md:py-12">
           <motion.div 
             className="flex whitespace-nowrap"
             animate={{
@@ -103,12 +103,12 @@ export function Testimonials() {
             {marquee1.map((t, i) => (
               <div 
                 key={i}
-                className="inline-flex flex-col items-center px-12 md:px-20 text-center w-[350px] md:w-[500px] whitespace-normal border-r border-black/5 last:border-r-0"
+                className="inline-flex flex-col items-center px-8 md:px-20 text-center w-[280px] md:w-[500px] whitespace-normal border-r border-black/5 last:border-r-0"
               >
-                <p className="text-lg md:text-xl font-medium text-black/80 mb-6 leading-relaxed italic">
+                <p className="text-base md:text-xl font-medium text-black/80 mb-4 md:mb-6 leading-relaxed italic">
                   "{t.content}"
                 </p>
-                <div className="flex items-center justify-center space-x-3 text-[10px] font-bold tracking-[0.3em] text-black/40 uppercase">
+                <div className="flex items-center justify-center space-x-3 text-[9px] md:text-[10px] font-bold tracking-[0.2em] md:tracking-[0.3em] text-black/40 uppercase">
                   <span>{t.author}</span>
                   <span className="w-1 h-1 bg-black/10 rounded-full" />
                   <span>{t.location}</span>
@@ -119,7 +119,7 @@ export function Testimonials() {
         </div>
 
         {/* Row 2: Right to Left */}
-        <div className="flex overflow-hidden border-b border-black/5 pb-12">
+        <div className="flex overflow-hidden border-b border-black/5 pb-8 md:pb-12">
           <motion.div 
             className="flex whitespace-nowrap"
             animate={{
@@ -134,12 +134,12 @@ export function Testimonials() {
             {marquee2.map((t, i) => (
               <div 
                 key={i}
-                className="inline-flex flex-col items-center px-12 md:px-20 text-center w-[350px] md:w-[500px] whitespace-normal border-r border-black/5 last:border-r-0"
+                className="inline-flex flex-col items-center px-8 md:px-20 text-center w-[280px] md:w-[500px] whitespace-normal border-r border-black/5 last:border-r-0"
               >
-                <p className="text-lg md:text-xl font-medium text-black/80 mb-6 leading-relaxed italic">
+                <p className="text-base md:text-xl font-medium text-black/80 mb-4 md:mb-6 leading-relaxed italic">
                   "{t.content}"
                 </p>
-                <div className="flex items-center justify-center space-x-3 text-[10px] font-bold tracking-[0.3em] text-black/40 uppercase">
+                <div className="flex items-center justify-center space-x-3 text-[9px] md:text-[10px] font-bold tracking-[0.2em] md:tracking-[0.3em] text-black/40 uppercase">
                   <span>{t.author}</span>
                   <span className="w-1 h-1 bg-black/10 rounded-full" />
                   <span>{t.location}</span>

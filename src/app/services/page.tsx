@@ -1,6 +1,17 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import { CheckCircle2, Car, Paintbrush, Ruler, Shield, Hammer, ClipboardCheck, ArrowRight, Truck, Award } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Collision Repair Services",
+  description: "Comprehensive auto body repair services in Gardena, CA. Expert collision repair, bumper repair, frame alignment, and color-matched painting with a 5-year warranty.",
+  openGraph: {
+    title: "Collision Repair Services | Pacific Auto Body",
+    description: "Expert auto body services including precision frame alignment, scratch/dent repair, and structural restoration in Gardena, CA.",
+  },
+};
 
 const whyChooseUs = [
   {
@@ -32,21 +43,33 @@ export default function ServicesPage() {
       <section className="relative py-20 md:py-32 overflow-hidden border-b border-black/5">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(0,0,0,0.03)_0%,transparent_50%)]" />
         <div className="container relative z-10 mx-auto px-6">
-          <div
-            className="opacity-100 translate-y-0"
-          >
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-6 md:mb-8 max-w-4xl leading-[1.1] md:leading-tight uppercase italic text-black">
-              Experience Exceptional <br />
-              <span className="text-black/40 font-normal">Auto Body Repair</span>
-            </h1>
-            <p className="text-lg md:text-2xl text-black/70 max-w-3xl leading-relaxed mb-8 md:mb-10 font-medium">
-              When your car or truck needs bodywork, turn to Pacific Auto Body of Gardena, CA. 
-              We specialize in vehicle collision repairs and more with 25 years of experience. 
-              Contact us for a FREE estimate.
-            </p>
-            <Button size="lg" asChild className="w-full sm:w-auto rounded-full bg-black text-white hover:bg-black/90 px-8 h-12 md:h-14 text-sm md:text-base font-bold shadow-lg">
-              <Link href="/contact">Get Your Free Estimate</Link>
-            </Button>
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+            <div className="flex-1 opacity-100 translate-y-0 text-left">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-6 md:mb-8 max-w-4xl leading-[1.1] md:leading-tight uppercase italic text-black">
+                Experience Exceptional <br />
+                <span className="text-black/40 font-normal">Auto Body Repair</span>
+              </h1>
+              <p className="text-lg md:text-2xl text-black/70 max-w-3xl leading-relaxed mb-8 md:mb-10 font-medium">
+                When your car or truck needs bodywork, turn to Pacific Auto Body of Gardena, CA. 
+                We specialize in vehicle collision repairs and more with 25 years of experience. 
+                Contact us for a FREE estimate.
+              </p>
+              <Button size="lg" asChild className="w-full sm:w-auto rounded-full bg-black text-white hover:bg-black/90 px-8 h-12 md:h-14 text-sm md:text-base font-bold shadow-lg">
+                <Link href="/contact">Get Your Free Estimate</Link>
+              </Button>
+            </div>
+            
+            <div className="flex-1 w-full max-w-2xl">
+              <div className="relative aspect-[4/3] rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl shadow-black/10 transform lg:rotate-2 hover:rotate-0 transition-transform duration-700">
+                <Image 
+                  src="/a1.jpg" 
+                  alt="Pacific Auto Body Repair Workshop" 
+                  fill 
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -129,8 +152,14 @@ export default function ServicesPage() {
             </div>
             
             <div className="flex-1 w-full aspect-square rounded-[2rem] md:rounded-[3rem] bg-white border border-black/5 flex items-center justify-center relative overflow-hidden shadow-2xl shadow-black/5">
-                <div className="absolute inset-0 bg-gradient-to-tr from-black/[0.01] to-transparent" />
-                <span className="text-black/5 font-black text-6xl md:text-9xl uppercase tracking-tighter opacity-10 select-none -rotate-12">Quality</span>
+                <Image 
+                  src="/a2.jpg" 
+                  alt="Quality Auto Body Repair detail" 
+                  fill 
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-black/20 to-transparent pointer-events-none" />
+                <span className="absolute bottom-10 right-10 text-white/90 font-black text-4xl md:text-6xl uppercase tracking-tighter select-none -rotate-12 drop-shadow-2xl">Quality</span>
             </div>
           </div>
         </div>
