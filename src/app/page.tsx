@@ -1,27 +1,20 @@
 import { Hero } from "@/components/home/Hero";
-import { ImageParallax } from "@/components/home/ImageParallax";
-import { Stats } from "@/components/home/Stats";
-import { ServicesOverview } from "@/components/home/ServicesOverview";
-import { Testimonials } from "@/components/home/Testimonials";
-import { WhyChooseUs } from "@/components/home/WhyChooseUs";
-import { FinalCTA } from "@/components/home/FinalCTA";
+import { MarqueeSection } from "@/components/home/MarqueeSection";
+import { AboutSection } from "@/components/home/AboutSection";
+import { ServicesSection } from "@/components/home/ServicesSection";
+import { ProjectsSection } from "@/components/home/ProjectsSection";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      
-      <ImageParallax text="WE RESTORE YOUR VEHICLE TO FACTORY PERFECTION WITH UNCOMPROMISING CARE." />
-      
-      <Stats />
 
-      <Testimonials />
-
-      <ServicesOverview />
-
-      <WhyChooseUs />
-      
-      <FinalCTA />
+      <div className="post-hero-page">
+        <MarqueeSection />
+        <AboutSection />
+        <ServicesSection />
+        <ProjectsSection />
+      </div>
     </>
   );
 }

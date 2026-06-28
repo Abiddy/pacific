@@ -1,8 +1,17 @@
 @import "tailwindcss";
 
+.font-playfair {
+  font-family: var(--font-playfair), serif;
+}
+
+.font-display {
+  font-family: var(--font-syne), sans-serif;
+  letter-spacing: -0.03em;
+}
+
 @theme {
-  /* Override the default sans font with our Outfit variable */
-  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-syne), ui-sans-serif, system-ui, sans-serif;
   
   --color-primary: #000000;
   --color-primary-foreground: #ffffff;
@@ -47,11 +56,69 @@ body {
   position: relative;
   background-color: var(--background);
   color: var(--foreground);
-  /* Use the font variable directly to ensure it works even if Tailwind classes fail */
-  font-family: var(--font-outfit), sans-serif;
+  font-family: var(--font-dm-sans), sans-serif;
   font-feature-settings: "rlig" 1, "calt" 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes heroReveal {
+  0% { opacity: 0; transform: translateY(28px); filter: blur(12px); }
+  100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+@keyframes heroFadeUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroZoom {
+  0% { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+
+.hero-anim {
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-reveal {
+  animation-name: heroReveal;
+  animation-duration: 1.1s;
+}
+
+.hero-fade {
+  animation-name: heroFadeUp;
+  animation-duration: 1s;
+}
+
+.hero-zoom {
+  animation: heroZoom 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-anim,
+  .hero-zoom {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+/* Post-hero landing sections */
+.post-hero-page {
+  font-family: var(--font-dm-sans), sans-serif;
+  background: #0c0c0c;
+  overflow-x: clip;
+}
+
+.hero-heading {
+  font-family: var(--font-syne), sans-serif;
+  letter-spacing: -0.04em;
+  background: linear-gradient(180deg, #646973 0%, #bbccd7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Optimized background layer - Simple white background */

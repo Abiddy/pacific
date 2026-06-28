@@ -1,17 +1,31 @@
 import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
+import { DM_Sans, Playfair_Display, Syne } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 
-const outfit = Outfit({
+const dmSans = DM_Sans({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-outfit",
-  preload: true,
-  adjustFontFallback: true,
+  variable: "--font-dm-sans",
+  weight: ["300", "400", "500", "600", "700"],
+});
+
+const syne = Syne({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-syne",
+  weight: ["400", "500", "600", "700", "800"],
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-playfair",
+  style: ["italic", "normal"],
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -71,7 +85,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${outfit.variable}`}>
+    <html lang="en" className={`${dmSans.variable} ${syne.variable} ${playfair.variable}`}>
       <head>
         <link rel="preload" href="/mercedes.glb" as="fetch" crossOrigin="anonymous" />
       </head>
